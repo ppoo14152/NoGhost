@@ -15,5 +15,10 @@ public class Clase1 extends Actor
     public void act() 
     {
         // Add your action code here.
-    }    
+    }
+    
+    public void metodo2()
+    {
+        //CRISTOBAL ZAVALA CANO
+    }
 }

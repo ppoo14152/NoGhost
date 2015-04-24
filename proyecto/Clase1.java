@@ -21,4 +21,8 @@ public class Clase1 extends Actor
     {
         //CRISTOBAL ZAVALA CANO
     }
-}
+    public void metodo1()
+    {
+        //Maria Gpe. Velazquez Martinez
+    }
+    }

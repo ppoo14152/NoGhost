@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Sun Apr 26 18:23:34 CDT 2015
+#Sun Apr 26 18:44:47 CDT 2015
 target12.editor.height=726
 target10.editor.width=980
 target2.width=80
@@ -78,6 +78,7 @@ target10.name=Ayuda
 dependency13.type=UsesDependency
 target14.naviview.expanded=true
 target7.editor.width=900
+class.EstaticosAyuda.superclass=greenfoot.Actor
 target2.type=ClassTarget
 target13.editor.height=700
 target4.editor.y=20
@@ -91,6 +92,7 @@ target2.height=50
 target2.typeParameters=
 target6.type=ClassTarget
 dependency11.to=Pisos
+class.CasperAyuda.superclass=EstaticosAyuda
 dependency11.from=Casa
 target9.typeParameters=
 target11.editor.y=28

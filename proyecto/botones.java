@@ -26,7 +26,7 @@ public class botones extends Actor
         }
         if(b == 4)
         { 
-            imagen=new GreenfootImage("teclado.jpg");//b igual a 4
+            imagen=new GreenfootImage("Creditos.jpg");//b igual a 4
         }
         
         setImage(imagen);

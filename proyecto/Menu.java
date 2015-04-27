@@ -10,6 +10,7 @@ public class Menu extends World
 {   
     private Actor ayuda;
     private Actor jugar;
+    private Actor credito;
     
     public Menu()
     {    
@@ -20,6 +21,9 @@ public class Menu extends World
         
         jugar = new botones(1);
         addObject(jugar, 100, 450);
+        
+        credito = new botones(4);
+        addObject(credito, 360, 450);
         
         setPaintOrder(botones.class);
         
@@ -38,6 +42,10 @@ public class Menu extends World
             {
                 Greenfoot.setWorld(new Casa());
             }
+             if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == credito)
+            {
+                Greenfoot.setWorld(new Credito());
+            }
         }
     }
     
@@ -54,6 +62,9 @@ public class Menu extends World
         
         TiosMenu tM2 = new TiosMenu(2);
         addObject(tM2, 800, 400);
+        
+        TiosMenu tM4 = new TiosMenu(4);//Titulo Estatico
+        addObject(tM4, 180, 80);
         
         CasperMenu cM = new CasperMenu(620, 200, 1);
         addObject(cM, 620, 200);

@@ -16,13 +16,13 @@ public class Clase1 extends Actor
     {
         // Add your action code here.
     }
-    
-    public void metodo2()
-    {
-        //CRISTOBAL ZAVALA CANO
-    }
     public void metodo1()
     {
         //Maria Gpe. Velazquez Martinez
     }
+    public void metodo2()
+    {
+        //CRISTOBAL ZAVALA CANO
+    }
+    
     }

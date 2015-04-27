@@ -63,7 +63,7 @@ public class Casper extends Actor
     
     public void LimitesPiso()
     {
-        if(direccion == 3 && getOneObjectAtOffset(0,Alto()/2,Pisos.class) != null)
+        if(direccion == 3 && getOneObjectAtOffset(0,-Alto()/2,Pisos.class) != null)
         {
             setLocation(getX(),getY()+speed);
         }
@@ -77,7 +77,7 @@ public class Casper extends Actor
         Elevador elev = (Elevador)(getWorld().getObjects(Elevador.class).get(0)); 
         
         Actor elevador = getOneIntersectingObject(Elevador.class); 
-        Actor baseElev = getOneIntersectingObject(BaseElevador.class); 
+        //Actor baseElev = getOneIntersectingObject(BaseElevador.class); 
         
         int x = elev.Parado();
         
@@ -85,12 +85,12 @@ public class Casper extends Actor
         
         if(direccion == 2 && getOneObjectAtOffset(-Ancho()/2,0,BaseElevador.class) != null)
         {
-            setLocation(getX()+1,getY());
+            setLocation(getX()+speed,getY());
         }
         
         if(direccion == 1 && getOneObjectAtOffset(Ancho()/2,0,BaseElevador.class) != null)
         {
-            setLocation(getX()-1,getY());
+            setLocation(getX()-speed,getY());
         }
         
         if(x == 1 && elevador != null) // Si el elevador esta detenido y esta tocando al elevador
@@ -113,11 +113,11 @@ public class Casper extends Actor
         {
             if(varDinamica < varEstatica)
             {
-                setLocation(getX(),getY()-1);
+                setLocation(getX(),getY()-speed);
             }
             if(varDinamica > varEstatica)
             {
-                setLocation(getX(),getY()+1);
+                setLocation(getX(),getY()+speed);
             }
         }
         

@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Muebles()
+comment0.params=sel
+comment0.target=Muebles(int)
 comment1.params=
 comment1.target=void\ act()
 numComments=2

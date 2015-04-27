@@ -13,6 +13,7 @@ public class Pared extends Estaticos
     public Pared()
     {
         imagen = new GreenfootImage("B2.png");
+        
         setImage(imagen);
     }
     

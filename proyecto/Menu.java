@@ -51,6 +51,7 @@ public class Menu extends World
     
     public void prepare()
     {
+        
         Menu2 m2 = new Menu2(); //Nombro al objeto de la clase menu2 como m2
         addObject(m2, 450, 265); //Adhiero el objeto al proyecto
         
@@ -63,8 +64,9 @@ public class Menu extends World
         TiosMenu tM2 = new TiosMenu(2);
         addObject(tM2, 800, 400);
         
-        TiosMenu tM4 = new TiosMenu(4);//Titulo Estatico
+        TiosMenu tM4 = new TiosMenu(4);
         addObject(tM4, 180, 80);
+         
         
         CasperMenu cM = new CasperMenu(620, 200, 1);
         addObject(cM, 620, 200);

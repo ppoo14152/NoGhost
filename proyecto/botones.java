@@ -24,14 +24,13 @@ public class botones extends Actor
         { 
             imagen=new GreenfootImage("Regresar.png");//b igual a 3
         }
+       
         if(b == 4)
         { 
             imagen=new GreenfootImage("Creditos.png");//b igual a 4
         }
-        
         setImage(imagen);
     }
-    
     public void act() 
     {
         setImage(imagen);

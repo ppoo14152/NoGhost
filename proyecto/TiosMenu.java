@@ -26,7 +26,7 @@ public class TiosMenu extends Actor
         }
         if(tipo ==4)
         {
-            imagen = new GreenfootImage("fondonegro1.jpg");//Titulo del juego
+            imagen = new GreenfootImage("fondonegro1.jpg");
         }
         setImage(imagen);
     }

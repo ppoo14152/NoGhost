@@ -1,26 +1,23 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
- * Write a description of class Ayuda here.
+ * Write a description of class Credito here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Ayuda extends World
+public class Credito extends World
 {
     private Actor Regresar;
     
-    public Ayuda()
+    public Credito()
     {    
-        super(920, 530, 1); 
+        super(920, 530, 1);
         
         Regresar = new botones(3);
         addObject(Regresar, 850, 450);
-        
-        prepare();
     }
-    
-    public void act()
+      public void act()
     {
         if(Greenfoot.getMouseInfo()!=null)
         {
@@ -30,11 +27,5 @@ public class Ayuda extends World
                 
             }
         }
-    }
-    
-    public void prepare()
-    {
-        CasperAyuda jug = new CasperAyuda(690, 200);
-        addObject(jug, 690, 200);
     }
 }

@@ -13,6 +13,7 @@ public class Muebles extends Estaticos
     public Muebles()
     {
         imagen = new GreenfootImage("mueble1.png");
+        
         setImage(imagen);
     }
     

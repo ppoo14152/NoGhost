@@ -56,7 +56,6 @@ public class Menu2 extends Actor
             
             musica.play();
         }
-        
         if(band)
         {
             setImage(imagen1);
@@ -68,7 +67,6 @@ public class Menu2 extends Actor
                 aux3 = 30;
             }
         }
-        
         if(band2)
         {
             setImage(imagen2);
@@ -80,7 +78,6 @@ public class Menu2 extends Actor
                 aux4 = 190;
             }
         }
-        
         if(band3)
         {
             setImage(imagen1);

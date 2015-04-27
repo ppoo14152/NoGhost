@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=selElevador
+comment0.target=Elevador(int)
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ Movimiento()
+comment3.params=
+comment3.target=boolean\ Direccion()
+comment4.params=
+comment4.target=int\ Parado()
+numComments=5

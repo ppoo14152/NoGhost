@@ -15,7 +15,8 @@ public class Casa extends World
      */
     public Casa()
     {    
-        super(920, 530, 1);
+        super(920, 530, 1); //Resolucion//
+        
         prepare();
     }
     
@@ -28,43 +29,51 @@ public class Casa extends World
     { 
         //////////////Techo/////////////////
         Pisos a1 = new Pisos();
-        addObject(a1,155,120);
+        addObject(a1,183,147);
         Pisos a2 = new Pisos();
-        addObject(a2,228,120);
+        addObject(a2,228,147);
         Pisos a3 = new Pisos();
-        addObject(a3,356,120);
+        addObject(a3,356,147);
         Pisos a4 = new Pisos();
-        addObject(a4,484,120);
+        addObject(a4,484,147);
         Pisos a5 = new Pisos();
-        addObject(a5,612,120);
+        addObject(a5,612,147);
         Pisos a6 = new Pisos();
-        addObject(a6,740,120);
+        addObject(a6,740,147);
+        Pisos a7 = new Pisos();
+        addObject(a7,770,147);
         /////////////Piso 3///////////////////
+        Pisos b0 = new Pisos();
+        addObject(b0,145,268);
         Pisos b1 = new Pisos();
-        addObject(b1,155,250);
+        addObject(b1,155,268);
         Pisos b2 = new Pisos();
-        addObject(b2,228,250);
+        addObject(b2,228,268);
         Pisos b3 = new Pisos();
-        addObject(b3,356,250);
+        addObject(b3,356,268);
         Pisos b4 = new Pisos();
-        addObject(b4,484,250);
+        addObject(b4,484,268);
         Pisos b5 = new Pisos();
-        addObject(b5,612,250);
+        addObject(b5,612,268);
         Pisos b6 = new Pisos();
-        addObject(b6,740,250);
+        addObject(b6,703,268);
+        Pisos b7 = new Pisos();
+        addObject(b7,120,268);
         /////////////Piso 2///////////////////
         Pisos c1 = new Pisos();
-        addObject(c1,155,380);
+        addObject(c1,183,387);
         Pisos c2 = new Pisos();
-        addObject(c2,228,380);
+        addObject(c2,228,387);
         Pisos c3 = new Pisos();
-        addObject(c3,356,380);
+        addObject(c3,356,387);
         Pisos c4 = new Pisos();
-        addObject(c4,484,380);
+        addObject(c4,484,387);
         Pisos c5 = new Pisos();
-        addObject(c5,612,380);
+        addObject(c5,612,387);
         Pisos c6 = new Pisos();
-        addObject(c6,740,380);
+        addObject(c6,740,387);
+        Pisos c7 = new Pisos();
+        addObject(c7,770,387);
         /////////////Piso 1///////////////////
         Pisos d1 = new Pisos();
         addObject(d1,155,510);
@@ -78,29 +87,54 @@ public class Casa extends World
         addObject(d5,612,510);
         Pisos d6 = new Pisos();
         addObject(d6,740,510);
+        Pisos d8 = new Pisos();
+        addObject(d8,770,510);
+        Pisos d7 = new Pisos();
+        addObject(d7,120,510);
         ///////////Pared izquierda////////////
         Pared pi1 = new Pared();
-        addObject(pi1, 105,80);
+        addObject(pi1, 40,80);
         Pared pi2 = new Pared();
-        addObject(pi2, 105,208);
+        addObject(pi2, 40,208);
         Pared pi3 = new Pared();
-        addObject(pi3, 105,336);
+        addObject(pi3, 40,336);
         Pared pi4 = new Pared();
-        addObject(pi4, 105,462);
+        addObject(pi4, 40,462);
         ///////////Pared derecha////////////
         Pared pd1 = new Pared();
-        addObject(pd1, 790,80);
+        addObject(pd1, 850,80);
         Pared pd2 = new Pared();
-        addObject(pd2, 790,208);
+        addObject(pd2, 850,208);
         Pared pd3 = new Pared();
-        addObject(pd3, 790,336);
+        addObject(pd3, 850,336);
         Pared pd4 = new Pared();
-        addObject(pd4, 790,462);
+        addObject(pd4, 850,462);
+
         //////////Muebles/////////////////
         Muebles m1 = new Muebles();
         addObject(m1, 200,70);
+        /////////Puerta///////////////////
+        Puerta p1 = new Puerta();
+        addObject(p1, 805, 447);
+        /////////Elevador/////////////////
+        Elevador el1 = new Elevador(0);
+        addObject(el1, 88, 87);
+        BaseElevador be1 = new BaseElevador(2);
+        addObject( be1, 87, 147);
         
+        Elevador el2 = new Elevador(0);
+        addObject(el2, 88, 327);
+        BaseElevador be2 = new BaseElevador(2);
+        addObject( be2, 87, 390);
+        
+        Elevador el3 = new Elevador(0);
+        addObject(el3, 800, 207);
+        BaseElevador be3 = new BaseElevador(2);
+        addObject( be3, 800, 267);
+        /////////Gasper//////////////////
         Casper jugador = new Casper();
         addObject(jugador,750,80);
+        
+        
     }
 }

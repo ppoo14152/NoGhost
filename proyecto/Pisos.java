@@ -13,6 +13,7 @@ public class Pisos extends Estaticos
     public Pisos()
     {
         imagen = new GreenfootImage("T13.png");
+        
         setImage(imagen);
     }
     

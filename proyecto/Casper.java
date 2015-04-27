@@ -11,6 +11,7 @@ public class Casper extends Actor
     public int direccion;
     private int bandElevador = 0;
     private int varEstatica = 0;
+    private int speed = 5 ;
     
     public void act() 
     {
@@ -27,22 +28,22 @@ public class Casper extends Actor
         
         if(Greenfoot.isKeyDown("right"))
         {
-            this.setLocation(this.getX()+1,this.getY());
+            this.setLocation(this.getX()+speed,this.getY());
             direccion = 1;
         }   
         if(Greenfoot.isKeyDown("left"))
         {
-            this.setLocation(this.getX()-1,this.getY());
+            this.setLocation(this.getX()-speed,this.getY());
             direccion = 2;
         }   
         if(Greenfoot.isKeyDown("up"))
         {
-            this.setLocation(this.getX(),this.getY()-1);
+            this.setLocation(this.getX(),this.getY()-speed);
             direccion = 3;
         }   
         if(Greenfoot.isKeyDown("down"))
         {
-            this.setLocation(this.getX(),this.getY()+1);
+            this.setLocation(this.getX(),this.getY()+speed);
             direccion = 4;
         }   
     }
@@ -51,24 +52,24 @@ public class Casper extends Actor
     {
         if(direccion == 1 && getOneObjectAtOffset(Ancho()/2,0,Pared.class) != null)
         {
-            setLocation(getX()-1,getY());
+            setLocation(getX()-speed,getY());
         }
         
         if(direccion == 2 && getOneObjectAtOffset(-Ancho()/2,0,Pared.class) != null)
         {
-            setLocation(getX()+1,getY());
+            setLocation(getX()+speed,getY());
         }
     }
     
     public void LimitesPiso()
     {
-        if(direccion == 3 && getOneObjectAtOffset(Alto()/2,0,Pisos.class) != null)
+        if(direccion == 3 && getOneObjectAtOffset(0,Alto()/2,Pisos.class) != null)
         {
-            setLocation(getX(),getY()+1);
+            setLocation(getX(),getY()+speed);
         }
-        if(direccion == 4 && getOneObjectAtOffset(Alto()/2,0,Pisos.class) != null)
+        if(direccion == 4 && getOneObjectAtOffset(0,Alto()/2,Pisos.class) != null)
         {
-            setLocation(getX(),getY()-1);
+            setLocation(getX(),getY()-speed);
         }
     }
     public void TocandoTuboYElevador()

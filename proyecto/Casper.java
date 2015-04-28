@@ -12,15 +12,29 @@ public class Casper extends Actor
     private int bandElevador = 0;
     private int varEstatica = 0;
     private int speed = 5 ;
+    private Texto mitexto = new Texto();
     
     public void act() 
     {
         Movimiento();
+        tocaPosima();
+    }
+    
+    public void tocaPosima() 
+    {
+        Actor botella;
+        botella = getOneObjectAtOffset(0,0,posion.class);
+        if(botella !=null){
+        World mundo;
+        mundo=getWorld();
+        mundo.removeObject(botella);
+        java.util.List lstTexto = mundo.getObjects(Texto.class);
+        Texto objTexto = (Texto)lstTexto.get(0);
+        objTexto.agregar();
+        // mitexto.agregar();
+        }
         
-        LimitesPared();
-        LimitesPiso();
-        TocandoTuboYElevador();
-    }  
+    }
     
     public void Movimiento()
     {
@@ -28,29 +42,50 @@ public class Casper extends Actor
         
         if(Greenfoot.isKeyDown("right"))
         {
+            direccion = 1;                                  //1 Derecha
             this.setLocation(this.getX()+speed,this.getY());
-            direccion = 1;
-        }   
+            LimitesPared();
+         
+        }
+        
         if(Greenfoot.isKeyDown("left"))
         {
+            direccion = 2;                                  //2 Izquierda
             this.setLocation(this.getX()-speed,this.getY());
-            direccion = 2;
-        }   
+            LimitesPared();
+        
+        }
+        
         if(Greenfoot.isKeyDown("up"))
         {
+            direccion = 3;                                  //3 Arriba
             this.setLocation(this.getX(),this.getY()-speed);
-            direccion = 3;
-        }   
+            LimitesPiso();
+            
+        }
+        
         if(Greenfoot.isKeyDown("down"))
         {
-            this.setLocation(this.getX(),this.getY()+speed);
             direccion = 4;
+            this.setLocation(this.getX(),this.getY()+speed);
+            //LimitesPared();
+            LimitesPiso();
+            
         }   
     }
     
     public void LimitesPared()
     {
-        if(direccion == 1 && getOneObjectAtOffset(Ancho()/2,0,Pared.class) != null)
+        if(direccion == 1 && getOneIntersectingObject(Pared.class) != null)
+        {
+            setLocation(getX()-speed,getY());
+        }
+        
+        if(direccion == 2 && getOneIntersectingObject(Pared.class) != null)
+        {
+            setLocation(getX()+speed,getY());
+        }
+        /*if(direccion == 1 && getOneObjectAtOffset(Ancho()/2,0,Pared.class) != null)
         {
             setLocation(getX()-speed,getY());
         }
@@ -58,7 +93,9 @@ public class Casper extends Actor
         if(direccion == 2 && getOneObjectAtOffset(-Ancho()/2,0,Pared.class) != null)
         {
             setLocation(getX()+speed,getY());
-        }
+        }*/
+        
+        
     }
     
     public void LimitesPiso()
@@ -67,18 +104,19 @@ public class Casper extends Actor
         {
             setLocation(getX(),getY()+speed);
         }
+        
         if(direccion == 4 && getOneObjectAtOffset(0,Alto()/2,Pisos.class) != null)
         {
             setLocation(getX(),getY()-speed);
         }
     }
+    
     public void TocandoTuboYElevador()
     {   
         Elevador elev = (Elevador)(getWorld().getObjects(Elevador.class).get(0)); 
         
         Actor elevador = getOneIntersectingObject(Elevador.class); 
-        //Actor baseElev = getOneIntersectingObject(BaseElevador.class); 
-        
+        Actor baseElev = getOneIntersectingObject(BaseElevador.class);
         int x = elev.Parado();
         
         int varDinamica = elev.getY();
@@ -111,14 +149,17 @@ public class Casper extends Actor
         
         if(bandElevador == 1 && getOneObjectAtOffset(0,Alto()/2,Pisos.class) == null && x == 0)
         {
+            
             if(varDinamica < varEstatica)
             {
                 setLocation(getX(),getY()-speed);
             }
+            
             if(varDinamica > varEstatica)
             {
                 setLocation(getX(),getY()+speed);
             }
+            
         }
         
         if(x == 1 && bandElevador == 1 && Greenfoot.isKeyDown("z"))
@@ -127,6 +168,7 @@ public class Casper extends Actor
             bandElevador = 0;
         }
     }
+    
     private int Alto()
     {
         return getImage().getHeight();

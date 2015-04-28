@@ -9,26 +9,23 @@ import java.util.*;
  */
 public class Elevador extends Elevadores
 {
-    private ArrayList[] imagenes;
+    private ArrayList imagenes;
     
-    private int avanzar = 120; // Numero de pasos que da el ascensor de piso a piso
-    
+    private int avanzar = 120;                              // Numero de pasos que da el ascensor de piso a piso
     private int una = 0;
+    private int contador = 0;                               // Contador de pasos que da el ascensor de piso a piso
+    private int tamEdificio = 6;                            // Numero de pisos que tiene el edificio
+    private int noPiso = 0;                                 // Piso en el que se encuentra el elevador
     
-    private int contador = 0; // Contador de pasos que da el ascensor de piso a piso
+    private boolean banderaMovimiento = false;              // Bandera de el metodo Movimiento
+    private boolean banderaDireccion = false;               // Bandera del metodo Direccion
+    private boolean banderaStop = false;                    //Bandera que se le manda la respuesta del metodo Direccion al metodo Movimiento
+    private boolean bandera = false;                        //Bandera auxiliar del metodo de Direccion
     
-    private int tamEdificio = 6; // Numero de pisos que tiene el edificio
-    private int noPiso = 0; // Piso en el que se encuentra el elevador
+    private int x1 = 0;                                     // Variable que se utiliza para que el ascensor suba 
     
-    private boolean banderaMovimiento = false; // Bandera de el metodo Movimiento
-    private boolean banderaDireccion = false; // Bandera del metodo Direccion
-    private boolean banderaStop = false; //Bandera que se le manda la respuesta del metodo Direccion al metodo Movimiento
-    private boolean bandera = false; //Bandera auxiliar del metodo de Direccion
-    
-    private int x1 = 0; // Variable que se utiliza para que el ascensor suba 
-    
-    private int x = 400; // Direccion en X del ascensor
-    private int y = 84; // Direccion en Y del ascensor
+    private int x = 400;                                    // Direccion en X del ascensor
+    private int y = 84;                                     // Direccion en Y del ascensor
     
     public int detenido = 0;
     
@@ -42,22 +39,21 @@ public class Elevador extends Elevadores
             tamEdificio = 2;
         }
         
-        imagenes = new ArrayList[1];
-        
-        imagenes[0] = new ArrayList();
-        
-        imagenes[0].add(new GreenfootImage("Elevador.png"));
-        imagenes[0].add(new GreenfootImage("Elevador2.png"));
+        imagenes = new ArrayList();
+        imagenes.add(new GreenfootImage("Elevador.png"));
+        imagenes.add(new GreenfootImage("Elevador2.png"));
     }
+    
     public void act() 
     {
         int x = 0;
         
-        setImage((GreenfootImage)imagenes[0].get(1));
+        setImage((GreenfootImage)imagenes.get(1));
         
         Movimiento();
         x = Parado();
-    }    
+    }
+    
     private void Movimiento()
     {
         x = getX();
@@ -65,6 +61,7 @@ public class Elevador extends Elevadores
         
         if(contador < avanzar && banderaMovimiento ==  false) // Si el contador es menos a el numero de pasos que da el ascensor 
         {
+            
             if(!banderaStop) // Si la bandera es negativa baja el ascensor
             {
                 y++;
@@ -81,7 +78,6 @@ public class Elevador extends Elevadores
                 y--;
             }
             setLocation(x, y); // Cambia la posicion del ascensor
-            
             contador++; // Incrementa el contador
         }
         
@@ -161,12 +157,12 @@ public class Elevador extends Elevadores
     {   
         if(detenido == 1)
         {
-            setImage((GreenfootImage)imagenes[0].get(0));
+            setImage((GreenfootImage)imagenes.get(0));
             return 1;
         }
         else
         {
-            setImage((GreenfootImage)imagenes[0].get(1));
+            setImage((GreenfootImage)imagenes.get(1));
             return 0;
         }
     }

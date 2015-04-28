@@ -18,6 +18,13 @@ public class Casa extends World
         super(920, 530, 1); //Resolucion//
         
         prepare();
+        posiones();
+    }
+    
+    public void posiones()
+    {
+        Texto newTexto =new Texto();
+        addObject(newTexto,165,20);
     }
     
     public void prepare()
@@ -135,6 +142,7 @@ public class Casa extends World
         /////////Gasper//////////////////
         Casper jugador = new Casper();
         addObject(jugador,750,80);
+        
         
         
     }

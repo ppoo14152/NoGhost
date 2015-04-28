@@ -23,11 +23,13 @@ public class BaseElevador extends Elevadores
         {
             setImage((GreenfootImage)imagenes.get(0));
         }
+        
         if(sel == 1)
         {
             setImage((GreenfootImage)imagenes.get(1));
         }
     }
+    
     public void act() 
     {
         // Add your action code here.

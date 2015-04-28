@@ -26,6 +26,8 @@ public class Muebles extends Estaticos
         imagenes.add(new GreenfootImage("estufa.png"));
         imagenes.add(new GreenfootImage("4b.png"));
         imagenes.add(new GreenfootImage("lampara.png"));
+        imagenes.add(new GreenfootImage("cuadro2.jpg"));
+        imagenes.add(new GreenfootImage("cuadro1.jpg"));
         
          if(sel == 0)
         {
@@ -66,6 +68,14 @@ public class Muebles extends Estaticos
         if(sel == 9)
         {
             setImage((GreenfootImage)imagenes.get(9));
+        }
+        if(sel == 10)
+        {
+            setImage((GreenfootImage)imagenes.get(10));
+        }
+        if(sel == 11)
+        {
+            setImage((GreenfootImage)imagenes.get(11));
         }
     }
     

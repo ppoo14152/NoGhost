@@ -163,8 +163,13 @@ public class Casa extends World
         Muebles m7 = new Muebles(5);
         addObject(m7, 425,453);
         Muebles m8 = new Muebles(6);
-        addObject(m8, 530,357);
-        
+        addObject(m8, 230,330);
+        Muebles m9 = new Muebles(7);
+        addObject(m9, 280,350);
+        Muebles m10 = new Muebles(8);
+        addObject(m10, 600,100);
+        Muebles m11 = new Muebles(9);
+        addObject(m11, 618,52);
                 
         /////////Puerta///////////////////
         Puerta p1 = new Puerta();

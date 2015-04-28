@@ -1,4 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.*;
+
 
 /**
  * Write a description of class Muebles here.
@@ -8,13 +10,48 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Muebles extends Estaticos
 {
-    public GreenfootImage imagen;
-    
-    public Muebles()
-    {
-        imagen = new GreenfootImage("mueble1.png");
+     private ArrayList imagenes;
         
-        setImage(imagen);
+    public Muebles(int sel)
+    {
+        imagenes  = new ArrayList();
+        
+        imagenes.add(new GreenfootImage("mueble1.png"));
+        imagenes.add(new GreenfootImage("6a.png"));
+        imagenes.add(new GreenfootImage("5a.png"));
+        imagenes.add(new GreenfootImage("3c.png"));
+        imagenes.add(new GreenfootImage("2a.png"));
+        imagenes.add(new GreenfootImage("16a.png"));
+        imagenes.add(new GreenfootImage("12a.png"));
+        
+         if(sel == 0)
+        {
+            setImage((GreenfootImage)imagenes.get(0));
+        }
+        if(sel == 1)
+        {
+            setImage((GreenfootImage)imagenes.get(1));
+        }
+        if(sel == 2)
+        {
+            setImage((GreenfootImage)imagenes.get(2));
+        }
+        if(sel == 3)
+        {
+            setImage((GreenfootImage)imagenes.get(3));
+        }
+        if(sel == 4)
+        {
+            setImage((GreenfootImage)imagenes.get(4));
+        }
+        if(sel == 5)
+        {
+            setImage((GreenfootImage)imagenes.get(5));
+        }
+        if(sel == 6)
+        {
+            setImage((GreenfootImage)imagenes.get(6));
+        }
     }
     
     public void act() 

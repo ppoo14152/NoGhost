@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Casper extends Actor
 {
+    private GreenfootImage gasperIzq= new GreenfootImage("CasperJuego.png");
+    private GreenfootImage gasperDer= new GreenfootImage("CasperJuegoder.png");
     public int direccion;
     private int bandElevador = 0;
     private int varEstatica = 0;
@@ -44,6 +46,7 @@ public class Casper extends Actor
         {
             direccion = 1;                                  //1 Derecha
             this.setLocation(this.getX()+speed,this.getY());
+            setImage(gasperDer);
             LimitesPared();
          
         }
@@ -52,6 +55,7 @@ public class Casper extends Actor
         {
             direccion = 2;                                  //2 Izquierda
             this.setLocation(this.getX()-speed,this.getY());
+            setImage(gasperIzq);
             LimitesPared();
         
         }

@@ -26,6 +26,7 @@ public class persona extends Actor
         }
         setLocation(getX()+speed,getY());
         animacionDerecha();
+        //Restricciones();
     }
     
     public void animacionDerecha()
@@ -61,5 +62,28 @@ public class persona extends Actor
         avance = 0;
         }
         avance++;
+    }
+    
+    public void Restricciones()
+    {
+        if(getOneObjectAtOffset(Ancho()/2,0,BaseElevador.class) != null)
+        {
+            setLocation(getX()-5, getY());
+        }
+        
+        if(getOneObjectAtOffset(Ancho()/2,0,Elevador.class) != null)
+        {
+            setLocation(getX()-5, getY());
+        }
+    }
+    
+    private int Alto()
+    {
+        return getImage().getHeight();
+    }
+    
+    public int Ancho()
+    {
+        return getImage().getWidth();
     }
 }

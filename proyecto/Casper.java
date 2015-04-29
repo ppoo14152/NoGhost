@@ -15,11 +15,13 @@ public class Casper extends Actor
     private int varEstatica = 0;
     private int speed = 5 ;
     private Texto mitexto = new Texto();
+    private boolean bandEntrada = false;
     
     public void act() 
     {
         Movimiento();
         tocaPosima();
+        TocandoTuboYElevador();
     }
     
     public void tocaPosima() 
@@ -33,6 +35,7 @@ public class Casper extends Actor
         java.util.List lstTexto = mundo.getObjects(Texto.class);
         Texto objTexto = (Texto)lstTexto.get(0);
         objTexto.agregar();
+        PrendeObjeto();
         // mitexto.agregar();
         }
         
@@ -48,7 +51,6 @@ public class Casper extends Actor
             this.setLocation(this.getX()+speed,this.getY());
             setImage(gasperDer);
             LimitesPared();
-         
         }
         
         if(Greenfoot.isKeyDown("left"))
@@ -124,13 +126,13 @@ public class Casper extends Actor
         int x = elev.Parado();
         
         int varDinamica = elev.getY();
-        
-        if(direccion == 2 && getOneObjectAtOffset(-Ancho()/2,0,BaseElevador.class) != null)
+  
+        if(direccion == 2 && getOneObjectAtOffset(-Ancho()/2,0,BaseElevador.class) != null && bandEntrada == false)
         {
             setLocation(getX()+speed,getY());
         }
         
-        if(direccion == 1 && getOneObjectAtOffset(Ancho()/2,0,BaseElevador.class) != null)
+        if(direccion == 1 && getOneObjectAtOffset(Ancho()/2,0,BaseElevador.class) != null && bandEntrada == false)
         {
             setLocation(getX()-speed,getY());
         }
@@ -138,11 +140,17 @@ public class Casper extends Actor
         if(x == 1 && elevador != null) // Si el elevador esta detenido y esta tocando al elevador
         {
             Movimiento();
+            bandEntrada = true;
         }
         
-        if(x == 1 && elevador != null && Greenfoot.isKeyDown("w"))
+        if(x == 0 && elevador == null) // Si el elevador esta detenido y no esta tocando al elevador
+        {
+            bandEntrada = false;
+        }
+        
+        if(x == 1 && elevador != null && Greenfoot.isKeyDown("e"))
         { 
-            getWorld().setPaintOrder(Elevador.class, Casper.class);
+            getWorld().setPaintOrder(BaseElevador.class, Elevador.class, Casper.class);
             
             bandElevador = 1;
             if(x == 1)
@@ -153,23 +161,21 @@ public class Casper extends Actor
         
         if(bandElevador == 1 && getOneObjectAtOffset(0,Alto()/2,Pisos.class) == null && x == 0)
         {
-            
             if(varDinamica < varEstatica)
             {
-                setLocation(getX(),getY()-speed);
+                setLocation(getX(),getY()-1);
             }
-            
             if(varDinamica > varEstatica)
             {
-                setLocation(getX(),getY()+speed);
+                setLocation(getX(),getY()+1);
             }
-            
         }
         
-        if(x == 1 && bandElevador == 1 && Greenfoot.isKeyDown("z"))
+        if(x == 1 && bandElevador == 1 && Greenfoot.isKeyDown("s"))
         {
-            //getWorld().setPaintOrder(ImagenesJuego.class,Personajes.class,Bala.class, Enemigos.class,Puertas.class,BaseElevador.class,Elevador.class,Plataforma.class,Barrera.class,Ovni.class,BalaOvni.class);
+            getWorld().setPaintOrder(Casper.class, BaseElevador.class, Elevador.class);
             bandElevador = 0;
+            bandEntrada = false;
         }
     }
     
@@ -181,5 +187,21 @@ public class Casper extends Actor
     public int Ancho()
     {
         return getImage().getWidth();
+    }
+    
+    public boolean PrendeObjeto()
+    {
+        boolean band = false;
+        if(isTouching(Muebles.class))
+        {
+            if(Greenfoot.isKeyDown("space"))
+            {
+                band = true;
+            }
+        }else
+        {
+            band = false;
+        }
+        return band;
     }
 }

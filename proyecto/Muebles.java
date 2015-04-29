@@ -38,6 +38,13 @@ public class Muebles extends Estaticos
         imagenes.add(new GreenfootImage("tv.png"));
         imagenes.add(new GreenfootImage("wc.png"));
         imagenes.add(new GreenfootImage("baniera.png"));
+        imagenes.add(new GreenfootImage("foco5.png"));
+        imagenes.add(new GreenfootImage("comedor.png"));
+        imagenes.add(new GreenfootImage("foco2.png"));
+        imagenes.add(new GreenfootImage("tele.png"));
+        imagenes.add(new GreenfootImage("buro7.png"));
+        imagenes.add(new GreenfootImage("florero2.png"));
+        imagenes.add(new GreenfootImage("buro2.png"));
         
          if(sel == 0)
         {
@@ -84,45 +91,80 @@ public class Muebles extends Estaticos
             setImage((GreenfootImage)imagenes.get(8));
             numero = 8;
         }
-        if(sel == 9)
+        if(sel == 9)//lampara1
         {
             setImage((GreenfootImage)imagenes.get(9));
             numero = 9;
         }
-        if(sel == 10)
+        if(sel == 10)//cuadro cafe
         {
             setImage((GreenfootImage)imagenes.get(10));
             numero = 10;
         }
-        if(sel == 11)
+        if(sel == 11)//cuadro azul
         {
             setImage((GreenfootImage)imagenes.get(11));
             numero = 11;
         }
-         if(sel == 12)
+         if(sel == 12)//florero1
         {
             setImage((GreenfootImage)imagenes.get(12));
             numero = 12;
         }
-         if(sel == 13)
+         if(sel == 13)//lampara de piso
         {
             setImage((GreenfootImage)imagenes.get(13));
             numero = 13;
         }
-         if(sel == 14)
+         if(sel == 14)//tv
         {
             setImage((GreenfootImage)imagenes.get(14));
             numero = 14;
         }
-         if(sel == 15)
+         if(sel == 15)//wc
         {
             setImage((GreenfootImage)imagenes.get(15));
             numero = 15;
         }
-         if(sel == 16)
+         if(sel == 16)//bañera
         {
             setImage((GreenfootImage)imagenes.get(16));
             numero = 16;
+        }
+         if(sel == 17)//foco baño
+        {
+            setImage((GreenfootImage)imagenes.get(17));
+            numero = 17;
+        }
+         if(sel == 18)//comedor
+        {
+            setImage((GreenfootImage)imagenes.get(18));
+            numero = 18;
+        }
+        if(sel == 19)//foco comedor
+        {
+            setImage((GreenfootImage)imagenes.get(19));
+            numero = 19;
+        }
+        if(sel == 20)//tele
+        {
+            setImage((GreenfootImage)imagenes.get(20));
+            numero = 20;
+        }
+        if(sel == 21)//buro bajo tele
+        {
+            setImage((GreenfootImage)imagenes.get(21));
+            numero = 21;
+        }
+        if(sel == 22)//florero rojo
+        {
+            setImage((GreenfootImage)imagenes.get(22));
+            numero = 22;
+        }
+        if(sel == 23)//buro 2
+        {
+            setImage((GreenfootImage)imagenes.get(23));
+            numero = 23;
         }
     }
     

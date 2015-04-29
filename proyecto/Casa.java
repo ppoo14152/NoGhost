@@ -166,21 +166,35 @@ public class Casa extends World
         addObject(m8, 230,330);
         Muebles m9 = new Muebles(7);
         addObject(m9, 280,350);
-        Muebles m10 = new Muebles(8);//refrigerador
+        Muebles m10 = new Muebles(8);//
         addObject(m10, 600,100);
-        Muebles m11 = new Muebles(9);//estufa
+        Muebles m11 = new Muebles(9);//lampara1
         addObject(m11, 618,52);
         Muebles m12 = new Muebles(10);//cuadro cafe
         addObject(m12, 450,52);
         Muebles m13 = new Muebles(11);//cuadro azul
         addObject(m13, 500,430);
-        
         Muebles m14 = new Muebles(12);//florero1
         addObject(m14, 580,52);
         Muebles m15 = new Muebles(15);//wc
-        addObject(m15, 230,223);
+        addObject(m15, 222,223);
         Muebles m16 = new Muebles(16);//bañera
-        addObject(m16, 270,223);
+        addObject(m16, 279,235);
+        Muebles m17 = new Muebles(17);//foco baño
+        addObject(m17, 290,180);
+        Muebles m18 = new Muebles(18);//comedor
+        addObject(m18, 500,355); 
+        Muebles m19 = new Muebles(19);//foco comedor
+        addObject(m19, 500,300); 
+        Muebles m20 = new Muebles(20);//tele
+        addObject(m20, 575,354); 
+        Muebles m21 = new Muebles(21);//buro bajo flor roja
+        addObject(m21, 180,360); 
+        Muebles m22 = new Muebles(22);// florero rojo
+        addObject(m22, 180,337);
+        Muebles m23 = new Muebles(23);// buro 2
+        addObject(m23, 150,345);
+        
         /////////Puerta///////////////////
         Puerta p1 = new Puerta();
         addObject(p1, 805, 447);

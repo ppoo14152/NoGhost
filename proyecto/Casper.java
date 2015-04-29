@@ -16,6 +16,8 @@ public class Casper extends Actor
     private int speed = 5 ;
     private Texto mitexto = new Texto();
     private boolean bandEntrada = false;
+    private boolean bandPara;
+    private int timer = 3000;
     private int timeCreaPosion = 0;
     
     public void act() 
@@ -180,6 +182,7 @@ public class Casper extends Actor
             if(Greenfoot.isKeyDown("space"))
             {
                 band = true;
+                bandPara = true;
                 //getWorld().addObject(new posion(),getX(),getY());
             }
         }else
@@ -253,5 +256,25 @@ public class Casper extends Actor
             LimitesPiso();
             
         }   
+    }
+    public boolean ParaPersona()
+    {
+        boolean oli = false;
+        if(bandPara)
+        {
+            if(timer != 0)
+            {
+                timer--;
+                oli = true;
+            }
+            if(timer == 0)
+            {
+                timer = 3000;
+                oli = false;
+                bandPara = false;
+            }
+        }
+        //System.out.println(timer);
+        return oli;
     }
 }

@@ -191,6 +191,11 @@ public class Casper extends Actor
     
     public void desocultarItem()
     {
+        World mundo;
+        mundo=getWorld();
+        java.util.List lstMuebles = mundo.getObjects(Muebles.class);
+        Muebles objMueble = (Muebles)lstMuebles.get(7);
+        
         if(isTouching(Muebles.class)){
             
              if(Greenfoot.isKeyDown("space")){

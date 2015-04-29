@@ -40,16 +40,16 @@ public class Casa extends World
             int v=Greenfoot.getRandomNumber(3);
             int x=Greenfoot.getRandomNumber(getWidth());  //getWidth()
             
-            if(x<=100){
-                x=x+115;
+            if(x<=120){
+                x=x+120;
             }
             
-            if(x>=590){
-            x=x-10;
+            if(x>=getWidth()-150){
+            x=x-150;
             }
             
             if(v==1){
-               y=115;
+               y=482;
             }
             else if(v==2){
                y=238;

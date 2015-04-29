@@ -13,8 +13,10 @@ public class Muebles extends Estaticos
      private ArrayList imagenes;
      
      private int numero;
-     private boolean hola = false;
-     private int timer = 1000;
+     public boolean hola;
+     private int timer = 500;
+     private boolean band = false;
+     private boolean entra;
         
     public Muebles(int sel)
     {
@@ -329,11 +331,13 @@ public class Muebles extends Estaticos
         if(timer != 0)
         {
             //System.out.println(timer);
-            timer--;
+            timer --;
+            entra = true;
         }
         //System.out.println(timer);
         if(timer == 0)
         {
+            entra = false;
             //System.out.println("Entre al primer if");
             if(numero == 13)
             {

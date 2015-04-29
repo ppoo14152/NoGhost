@@ -36,17 +36,18 @@ public class persona extends Actor
     }
     public void parado()
     {
-       Casper jug = (Casper)(getWorld().getObjects(Casper.class).get(0)); 
-       boolean x = jug.PrendeObjeto();
-       
-       
-       if(x == true){
-          parate = true;
-       }else
-       {
-           parate = false;
-       }
-       
+        Casper jug = (Casper)(getWorld().getObjects(Casper.class).get(0));        
+        
+        boolean x = jug.ParaPersona();
+        
+        if(x == false)
+        {
+            parate = false;
+        }else
+        {
+            parate = true;
+        }
+        
     }
     public void animacionDerecha()
     {

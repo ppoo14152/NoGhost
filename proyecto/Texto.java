@@ -31,7 +31,7 @@ public class Texto extends Actor
         GreenfootImage img = getImage();
         img.clear();
         img.setColor(Color.WHITE);
-        img.drawString("Posimas: " + score, 4 , 20);
+        img.drawString("Posimas: " + score+" Objetivo: 50", 4 , 20);
     }
     
     public void act() 

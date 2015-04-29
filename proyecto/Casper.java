@@ -22,7 +22,10 @@ public class Casper extends Actor
         Movimiento();
         tocaPosima();
         TocandoTuboYElevador();
+        PrendeObjeto();
+        desocultarItem();
     }
+    
     
     
     
@@ -152,7 +155,7 @@ public class Casper extends Actor
         java.util.List lstTexto = mundo.getObjects(Texto.class);
         Texto objTexto = (Texto)lstTexto.get(0);
         objTexto.agregar();
-        PrendeObjeto();
+        
         // mitexto.agregar();
         }
         
@@ -176,6 +179,7 @@ public class Casper extends Actor
             if(Greenfoot.isKeyDown("space"))
             {
                 band = true;
+                //getWorld().addObject(new posion(),getX(),getY());
             }
         }else
         {
@@ -183,6 +187,24 @@ public class Casper extends Actor
         }
         return band;
     }
+    
+    public void desocultarItem()
+    {
+        if(isTouching(Muebles.class)){
+            
+            if(Greenfoot.isKeyDown("space")){
+                if(direccion==1){
+                    
+                    getWorld().addObject(new posion(),getX()+100,getY());
+                }    
+                
+                if(direccion == 2){
+                    getWorld().addObject(new posion(),getX()-100,getY());
+                }
+           }
+        }       
+    }
+    
     
     public void Movimiento()
     {

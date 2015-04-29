@@ -9,26 +9,45 @@ public class persona extends Actor
     private int speed = 1;
     private int frame = 1;
     private int avance = 0;
-    public persona()
+    private int id;
+    private boolean parate = false;
+    public persona(int n)
     {
         setImage("n1.png");
-        
+        id = n;
     }
     public void act() 
     {
         World m=getWorld();
-        if(getX()>=m.getWidth()-150||getX()<=120){
-            run1.mirrorHorizontally();
-            run2.mirrorHorizontally();
-            run3.mirrorHorizontally();
-            run4.mirrorHorizontally();
-            speed=-speed;
+        if (parate==false)
+        {
+            if(getX()>=m.getWidth()-150||getX()<=120){
+                run1.mirrorHorizontally();
+                run2.mirrorHorizontally();
+                run3.mirrorHorizontally();
+                run4.mirrorHorizontally();
+                speed=-speed;
+            }
+            setLocation(getX()+speed,getY());
         }
-        setLocation(getX()+speed,getY());
         animacionDerecha();
+        parado();
         //Restricciones();
     }
-    
+    public void parado()
+    {
+       Casper jug = (Casper)(getWorld().getObjects(Casper.class).get(0)); 
+       boolean x = jug.PrendeObjeto();
+       
+       
+       if(x == true){
+          parate = true;
+       }else
+       {
+           parate = false;
+       }
+       
+    }
     public void animacionDerecha()
     {
         if(frame == 1)

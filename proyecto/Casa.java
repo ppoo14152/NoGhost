@@ -194,6 +194,24 @@ public class Casa extends World
         addObject(m22, 180,337);
         Muebles m23 = new Muebles(23);// buro 2
         addObject(m23, 150,345);
+        Muebles m24 = new Muebles(24);// reloj
+        addObject(m24, 150,312);
+        Muebles m25 = new Muebles(25);// foco triple
+        addObject(m25, 360,425);
+        Muebles m26 = new Muebles(26);// buro blanco
+        addObject(m26, 321,475);
+        Muebles m27 = new Muebles(26);// buro blanco
+        addObject(m27, 500,475);
+        Muebles m28 = new Muebles(27);// globos
+        addObject(m28, 660,435);
+        Muebles m29 = new Muebles(28);// pelota
+        addObject(m29, 575,483);
+        Muebles m30 = new Muebles(29);// silla
+        addObject(m30, 620,483);
+        Muebles m31 = new Muebles(14);// tele google
+        addObject(m31, 620,450);
+        Muebles m32 = new Muebles(30);//  flores rosas morado
+        addObject(m32, 320,445);
         
         /////////Puerta///////////////////
         Puerta p1 = new Puerta();

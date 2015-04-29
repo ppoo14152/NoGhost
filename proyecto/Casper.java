@@ -16,6 +16,7 @@ public class Casper extends Actor
     private int speed = 5 ;
     private Texto mitexto = new Texto();
     private boolean bandEntrada = false;
+    private int timeCreaPosion = 0;
     
     public void act() 
     {
@@ -192,17 +193,21 @@ public class Casper extends Actor
     {
         if(isTouching(Muebles.class)){
             
-            if(Greenfoot.isKeyDown("space")){
-                if(direccion==1){
-                    
-                    getWorld().addObject(new posion(),getX()+100,getY());
-                }    
-                
-                if(direccion == 2){
+             if(Greenfoot.isKeyDown("space")){
+                if(timeCreaPosion >= 100 ){
+                   if(direccion==1){
+                      getWorld().addObject(new posion(),getX()+100,getY());
+                   }    
+                   
+                   if(direccion == 2){
                     getWorld().addObject(new posion(),getX()-100,getY());
+                   }
+                   
+                   timeCreaPosion=0;
                 }
-           }
-        }       
+             }
+        }
+        timeCreaPosion++;
     }
     
     

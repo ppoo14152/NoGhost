@@ -17,7 +17,7 @@ public class persona extends Actor
     public void act() 
     {
         World m=getWorld();
-        if(getX()>=m.getWidth()-5||getX()<=100){
+        if(getX()>=m.getWidth()-150||getX()<=120){
             run1.mirrorHorizontally();
             run2.mirrorHorizontally();
             run3.mirrorHorizontally();

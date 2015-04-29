@@ -24,61 +24,7 @@ public class Casper extends Actor
         TocandoTuboYElevador();
     }
     
-    public void tocaPosima() 
-    {
-        Actor botella;
-        botella = getOneObjectAtOffset(0,0,posion.class);
-        if(botella !=null){
-        World mundo;
-        mundo=getWorld();
-        mundo.removeObject(botella);
-        java.util.List lstTexto = mundo.getObjects(Texto.class);
-        Texto objTexto = (Texto)lstTexto.get(0);
-        objTexto.agregar();
-        PrendeObjeto();
-        // mitexto.agregar();
-        }
-        
-    }
     
-    public void Movimiento()
-    {
-        int y=getY();
-        
-        if(Greenfoot.isKeyDown("right"))
-        {
-            direccion = 1;                                  //1 Derecha
-            this.setLocation(this.getX()+speed,this.getY());
-            setImage(gasperDer);
-            LimitesPared();
-        }
-        
-        if(Greenfoot.isKeyDown("left"))
-        {
-            direccion = 2;                                  //2 Izquierda
-            this.setLocation(this.getX()-speed,this.getY());
-            setImage(gasperIzq);
-            LimitesPared();
-        
-        }
-        
-        if(Greenfoot.isKeyDown("up"))
-        {
-            direccion = 3;                                  //3 Arriba
-            this.setLocation(this.getX(),this.getY()-speed);
-            LimitesPiso();
-            
-        }
-        
-        if(Greenfoot.isKeyDown("down"))
-        {
-            direccion = 4;
-            this.setLocation(this.getX(),this.getY()+speed);
-            //LimitesPared();
-            LimitesPiso();
-            
-        }   
-    }
     
     public void LimitesPared()
     {
@@ -106,7 +52,17 @@ public class Casper extends Actor
     
     public void LimitesPiso()
     {
-        if(direccion == 3 && getOneObjectAtOffset(0,-Alto()/2,Pisos.class) != null)
+         if(direccion == 3 && getOneIntersectingObject(Pisos.class) != null)
+        {
+            setLocation(getX(),getY()+speed);
+        }
+        
+        if(direccion == 4 && getOneIntersectingObject(Pisos.class) != null)
+        {
+            setLocation(getX(),getY()-speed);
+        }
+        
+        /*if(direccion == 3 && getOneObjectAtOffset(0,-Alto()/2,Pisos.class) != null)
         {
             setLocation(getX(),getY()+speed);
         }
@@ -114,7 +70,7 @@ public class Casper extends Actor
         if(direccion == 4 && getOneObjectAtOffset(0,Alto()/2,Pisos.class) != null)
         {
             setLocation(getX(),getY()-speed);
-        }
+        }*/
     }
     
     public void TocandoTuboYElevador()
@@ -124,17 +80,23 @@ public class Casper extends Actor
         Actor elevador = getOneIntersectingObject(Elevador.class); 
         Actor baseElev = getOneIntersectingObject(BaseElevador.class);
         int x = elev.Parado();
-        
         int varDinamica = elev.getY();
+        
+        
+        
   
         if(direccion == 2 && getOneObjectAtOffset(-Ancho()/2,0,BaseElevador.class) != null && bandEntrada == false)
         {
+            
             setLocation(getX()+speed,getY());
+           
         }
         
         if(direccion == 1 && getOneObjectAtOffset(Ancho()/2,0,BaseElevador.class) != null && bandEntrada == false)
         {
+            
             setLocation(getX()-speed,getY());
+           
         }
         
         if(x == 1 && elevador != null) // Si el elevador esta detenido y esta tocando al elevador
@@ -179,6 +141,23 @@ public class Casper extends Actor
         }
     }
     
+    public void tocaPosima() 
+    {
+        Actor botella;
+        botella = getOneObjectAtOffset(0,0,posion.class);
+        if(botella !=null){
+        World mundo;
+        mundo=getWorld();
+        mundo.removeObject(botella);
+        java.util.List lstTexto = mundo.getObjects(Texto.class);
+        Texto objTexto = (Texto)lstTexto.get(0);
+        objTexto.agregar();
+        PrendeObjeto();
+        // mitexto.agregar();
+        }
+        
+    }
+    
     private int Alto()
     {
         return getImage().getHeight();
@@ -203,5 +182,44 @@ public class Casper extends Actor
             band = false;
         }
         return band;
+    }
+    
+    public void Movimiento()
+    {
+        int y=getY();
+        
+        if(Greenfoot.isKeyDown("right"))
+        {
+            direccion = 1;                                  //1 Derecha
+            this.setLocation(this.getX()+speed,this.getY());
+            setImage(gasperDer);
+            LimitesPared();
+        }
+        
+        if(Greenfoot.isKeyDown("left"))
+        {
+            direccion = 2;                                  //2 Izquierda
+            this.setLocation(this.getX()-speed,this.getY());
+            setImage(gasperIzq);
+            LimitesPared();
+        
+        }
+        
+        if(Greenfoot.isKeyDown("up"))
+        {
+            direccion = 3;                                  //3 Arriba
+            this.setLocation(this.getX(),this.getY()-speed);
+            LimitesPiso();
+            
+        }
+        
+        if(Greenfoot.isKeyDown("down"))
+        {
+            direccion = 4;
+            this.setLocation(this.getX(),this.getY()+speed);
+            //LimitesPared();
+            LimitesPiso();
+            
+        }   
     }
 }

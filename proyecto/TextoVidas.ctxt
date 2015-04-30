@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=cad\ pos
+comment0.target=TextoVidas(java.lang.String,\ int)
+comment1.params=cadena
+comment1.target=void\ Despliega(java.lang.String)
+comment2.params=
+comment2.target=void\ act()
+numComments=3

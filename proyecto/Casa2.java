@@ -24,8 +24,6 @@ public class Casa2 extends World
     {
         Texto newTexto =new Texto(1);
         addObject(newTexto,165,20);
-        Texto newTexto3 =new Texto(3);
-        addObject(newTexto,400,20);
     }
     
     public void prepare()
@@ -240,7 +238,8 @@ public class Casa2 extends World
         Casper jugador = new Casper();
         addObject(jugador,750,80);
         
-        
+        TextoVidas tx1 = new TextoVidas("Puntaje:",1);
+        addObject(tx1,700,30);
         
     }
 }

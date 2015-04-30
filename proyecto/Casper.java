@@ -21,6 +21,14 @@ public class Casper extends Actor
     private int timer = 3000;
     private int timeCreaPosion = 0;
     private int vida=100;
+    private String sVida;
+    private TextoVidas tx1;
+    
+    public Casper()
+    {
+        sVida = Integer.toString(vida);
+        tx1 = new TextoVidas(sVida,1);
+    }
     
     public void act() 
     {
@@ -31,6 +39,7 @@ public class Casper extends Actor
         desocultarItem();
         danio();
         gana();
+        MuestraVida();
     }
     
     
@@ -309,5 +318,12 @@ public class Casper extends Actor
         {
             Greenfoot.setWorld(new Menu()); 
         }
+    }
+    
+    public void MuestraVida()
+    {
+        sVida = Integer.toString(vida);
+        tx1.Despliega("Vida: " + sVida);
+        getWorld().addObject(tx1,700,30);
     }
 }

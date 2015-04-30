@@ -16,7 +16,6 @@ public class Casa2 extends World
     public Casa2()
     {    
         super(920, 530, 1); //Resolucion//
-        
         prepare();
         posiones();
         creaPersonas(10);

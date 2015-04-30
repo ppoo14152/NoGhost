@@ -19,7 +19,8 @@ public class Casa extends World
         
         prepare();
         posiones();
-        creaPersonas(5);
+        //creaPersonas(5);
+        creaPeople();
     }
     
     public void posiones()
@@ -35,7 +36,48 @@ public class Casa extends World
         Imagenes();
     }
     
-    public void creaPersonas(int numero){
+    
+    public void creaPeople()
+    {
+        int x;
+        persona pe1 = new persona(1);
+        persona pe2 = new persona(2);
+        persona pe3 = new persona(3);
+        persona pe4 = new persona(4);
+        persona pe5 = new persona(5);
+        
+        for(int i = 0; i < 6; i++ ){
+            x=Greenfoot.getRandomNumber(getWidth());  //getWidth()
+            if(x<=120){
+               x=x+120;
+            }
+            
+            if(x>=getWidth()-150){
+               x=x-150;
+            }
+        
+            if(i==1){    
+                addObject(pe1,x,115);
+            }
+            
+            if(i==2){
+                addObject(pe2,x,238);
+            }
+            
+            if(i==3){
+                addObject(pe3,x,238);
+            }
+            
+            if(i==4){
+               addObject(pe4,x,362);
+            }
+            
+            if(i==5){
+                addObject(pe5,x,480);
+            }
+       }
+    }
+    /*public void creaPersonas(int numero){
         for(int i=0;i<numero;i++){
             persona p=new persona(i);
             int y;
@@ -62,7 +104,7 @@ public class Casa extends World
             
             addObject(p,x,y);
         }
-    }
+    }*/
     
     public void Imagenes()
     { 

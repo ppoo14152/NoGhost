@@ -21,6 +21,7 @@ public class Texto extends Actor
            setImage(new GreenfootImage(200,30));
            repintar(0);
         }
+        
         if (sel ==1)
         {
            score=0;
@@ -47,19 +48,20 @@ public class Texto extends Actor
             img.setColor(Color.WHITE);
             img.drawString("Posimas: " + score+" Objetivo: 50", 4 , 20);
         }
+        
         if(n==1)
         {
             GreenfootImage img = getImage();
             img.clear();
             img.setColor(Color.WHITE);
-            img.drawString("Posimas: " + score+" Objetivo: 100", 4 , 20);
+            img.drawString("Posimas: "+ score+" Objetivo: 100", 4 , 20);
         }
         
     }
     
     public void act() 
     {
-        repintar(0);
-        repintar(1);
+        //repintar(0);
+        //repintar(1);
     }
 }

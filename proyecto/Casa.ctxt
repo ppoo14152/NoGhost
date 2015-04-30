@@ -8,7 +8,8 @@ comment2.params=
 comment2.target=void\ prepare()
 comment3.params=
 comment3.target=void\ creaPeople()
-comment4.params=
-comment4.target=void\ Imagenes()
-comment4.text=public\ void\ creaPersonas(int\ numero){\r\n\ \ \ \ \ \ \ \ for(int\ i\=0;i<numero;i++){\r\n\ \ \ \ \ \ \ \ \ \ \ \ persona\ p\=new\ persona(i);\r\n\ \ \ \ \ \ \ \ \ \ \ \ int\ y;\r\n\ \ \ \ \ \ \ \ \ \ \ \ int\ v\=Greenfoot.getRandomNumber(3);\r\n\ \ \ \ \ \ \ \ \ \ \ \ int\ x\=Greenfoot.getRandomNumber(getWidth());\ \ //getWidth()\r\n\ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ if(x<\=120){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\=x+120;\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ if(x>\=getWidth()-150){\r\n\ \ \ \ \ \ \ \ \ \ \ \ x\=x-150;\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ if(v\=\=1){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\=482;\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ \ \ \ else\ if(v\=\=2){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\=238;\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ \ \ \ else{\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\=362;\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ addObject(p,x,y);\r\n\ \ \ \ \ \ \ \ }\r\n}
-numComments=5
+comment4.params=numero
+comment4.target=void\ creaPersonas(int)
+comment5.params=
+comment5.target=void\ Imagenes()
+numComments=6

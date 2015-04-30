@@ -75,7 +75,7 @@ public class Casa extends World
             }
        }
     }
-    /*public void creaPersonas(int numero){
+    public void creaPersonas(int numero){
         for(int i=0;i<numero;i++){
             persona p=new persona(i);
             int y;
@@ -102,7 +102,7 @@ public class Casa extends World
             
             addObject(p,x,y);
         }
-    }*/
+    }
     
     public void Imagenes()
     { 
@@ -281,8 +281,8 @@ public class Casa extends World
         Casper jugador = new Casper();
         addObject(jugador,750,80);
         
-        TextoVidas tx1 = new TextoVidas("Puntaje:",1);
-        addObject(tx1,700,30);
+        //TextoVidas tx1 = new TextoVidas("Puntaje:",1);
+        //addObject(tx1,700,30);
         
     }
 }

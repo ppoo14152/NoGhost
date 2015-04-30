@@ -238,8 +238,8 @@ public class Casa2 extends World
         Casper jugador = new Casper();
         addObject(jugador,750,80);
         
-        TextoVidas tx1 = new TextoVidas("Puntaje:",1);
-        addObject(tx1,700,30);
+        //TextoVidas tx1 = new TextoVidas("Puntaje:",1);
+        //addObject(tx1,700,30);
         
     }
 }

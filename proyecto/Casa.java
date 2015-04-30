@@ -24,8 +24,10 @@ public class Casa extends World
     
     public void posiones()
     {
-        Texto newTexto =new Texto();
+        Texto newTexto =new Texto(0);
         addObject(newTexto,165,20);
+        Texto newTexto2 =new Texto(2);
+        addObject(newTexto,500,20);
     }
     
     public void prepare()
@@ -214,8 +216,12 @@ public class Casa extends World
         addObject(m32, 320,445);
         
         /////////Puerta///////////////////
-        Puerta p1 = new Puerta();
-        addObject(p1, 805, 447);
+        //Puerta p1 = new Puerta();
+        //addObject(p1, 805, 447);
+        
+        Objetivo obj = new Objetivo();
+        addObject(obj, 805, 447);
+        
         /////////Elevador/////////////////
         Elevador el1 = new Elevador(0);
         addObject(el1, 88, 87);

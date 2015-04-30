@@ -14,11 +14,13 @@ public class Casper extends Actor
     private int bandElevador = 0;
     private int varEstatica = 0;
     private int speed = 5 ;
-    private Texto mitexto = new Texto();
+    private Texto mitexto = new Texto(0);
+    private Texto mitexto1 = new Texto(1);
     private boolean bandEntrada = false;
     private boolean bandPara;
     private int timer = 3000;
     private int timeCreaPosion = 0;
+    private int vida=100;
     
     public void act() 
     {
@@ -27,6 +29,8 @@ public class Casper extends Actor
         TocandoTuboYElevador();
         PrendeObjeto();
         desocultarItem();
+        danio();
+        gana();
     }
     
     
@@ -276,5 +280,34 @@ public class Casper extends Actor
         }
         //System.out.println(timer);
         return oli;
+    }
+    public void danio()
+    {
+        if(isTouching(persona.class) && bandPara == false)
+        {
+            vida--;
+        }
+        
+        if(isTouching(persona.class) && bandPara == true)
+        {
+        }
+        
+        if(vida == 0)
+        {
+            Greenfoot.setWorld(new Menu()); 
+        }
+    }
+    public void gana()
+    {
+
+        if (isTouching(Objetivo.class))
+        {
+            Greenfoot.setWorld(new Casa2()); 
+        }
+        
+        if (isTouching(Objetivo2.class))
+        {
+            Greenfoot.setWorld(new Menu()); 
+        }
     }
 }

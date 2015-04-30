@@ -11,6 +11,7 @@ public class persona extends Actor
     private int avance = 0;
     private int id;
     private boolean parate = false;
+    private boolean p;
     public persona(int n)
     {
         setImage("n1.png");
@@ -34,12 +35,13 @@ public class persona extends Actor
         parado();
         //Restricciones();
     }
+   
     public void parado()
     {
         Casper jug = (Casper)(getWorld().getObjects(Casper.class).get(0));        
         
         boolean x = jug.ParaPersona();
-        
+        p=x;
         if(x == false)
         {
             parate = false;
@@ -49,6 +51,7 @@ public class persona extends Actor
         }
         
     }
+    
     public void animacionDerecha()
     {
         if(frame == 1)

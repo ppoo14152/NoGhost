@@ -19,13 +19,7 @@ public class Casa2 extends World
         getBackground().setColor(Color.BLACK);  //Establece el fondo color negro
         getBackground().fill();                 //Pone el fondo establecido
         prepare();
-        posiones();
         creaPersonas(10);
-    }
-    public void posiones()
-    {
-        Texto newTexto =new Texto(1);
-        addObject(newTexto,165,20);
     }
     
     public void prepare()
@@ -218,8 +212,6 @@ public class Casa2 extends World
         addObject(p1, 790, 85);
         Objetivo2 obj = new Objetivo2();
         addObject(obj, 805, 447);
-        /*Objetivo obj = new Objetivo();
-        addObject(obj, 805, 447 );*/
         
         /////////Elevador/////////////////
         Elevador el1 = new Elevador(0);
@@ -239,9 +231,6 @@ public class Casa2 extends World
         /////////Gasper//////////////////
         Casper jugador = new Casper();
         addObject(jugador,750,80);
-        
-        //TextoVidas tx1 = new TextoVidas("Puntaje:",1);
-        //addObject(tx1,700,30);
         
     }
 }

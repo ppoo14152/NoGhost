@@ -14,21 +14,14 @@ public class TextoVidas extends Actor
     public int posY = 0;
     public String cadena1;
     
-    public TextoVidas(String cad, int pos)
+    public TextoVidas(String cad)
     {
         cadena1 = cad;
-        
-        if(pos == 1)
-        {
-            posX = 700;
-            posY = 30;
-        }
-        
     }
     
     public void Despliega(String cadena)
     {
-        super.setImage(new GreenfootImage(cadena,30,java.awt.Color.WHITE,null));
+        super.setImage(new GreenfootImage(cadena1+cadena,15,java.awt.Color.WHITE,null));
     }
     
     public void act() 

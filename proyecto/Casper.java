@@ -14,20 +14,20 @@ public class Casper extends Actor
     private int bandElevador = 0;
     private int varEstatica = 0;
     private int speed = 5 ;
-    private Texto mitexto = new Texto(0);
-    private Texto mitexto1 = new Texto(1);
     private boolean bandEntrada = false;
     private boolean bandPara;
     private int timer = 3000;
     private int timeCreaPosion = 0;
     private int vida=100;
-    private String sVida;
     private TextoVidas tx1;
+    private int pocimasRecolectadas=0;
+    private TextoVidas item;
     
     public Casper()
     {
-        sVida = Integer.toString(vida);
-        tx1 = new TextoVidas(sVida,1);
+        //sVida = Integer.toString(vida);
+        tx1 = new TextoVidas("Vida:");
+        item = new TextoVidas("Posiones:");
     }
     
     public void act() 
@@ -40,6 +40,7 @@ public class Casper extends Actor
         danio();
         gana();
         MuestraVida();
+        MuestraPosiones();
     }
     
     
@@ -168,11 +169,7 @@ public class Casper extends Actor
         World mundo;
         mundo=getWorld();
         mundo.removeObject(botella);
-        java.util.List lstTexto = mundo.getObjects(Texto.class);
-        Texto objTexto = (Texto)lstTexto.get(0);
-        objTexto.agregar();
-        
-        // mitexto.agregar();
+        pocimasRecolectadas++;
         }
         
     }
@@ -196,7 +193,6 @@ public class Casper extends Actor
             {
                 band = true;
                 bandPara = true;
-                //getWorld().addObject(new posion(),getX(),getY());
             }
         }else
         {
@@ -218,6 +214,7 @@ public class Casper extends Actor
                 if(timeCreaPosion >= 100 ){
                    if(direccion==1){
                       getWorld().addObject(new posion(),getX()+100,getY());
+                      //posimasRecolectadas++;
                    }    
                    
                    if(direccion == 2){
@@ -322,8 +319,13 @@ public class Casper extends Actor
     
     public void MuestraVida()
     {
-        sVida = Integer.toString(vida);
-        tx1.Despliega("Vida: " + sVida);
+        tx1.Despliega(""+vida);
         getWorld().addObject(tx1,700,30);
+    }
+    
+    public void MuestraPosiones()
+    {
+        item.Despliega(""+pocimasRecolectadas);
+        getWorld().addObject(item,500,30);
     }
 }

@@ -19,15 +19,8 @@ public class Casa extends World
         getBackground().setColor(Color.BLACK);
         getBackground().fill();
         prepare();
-        posiones();
         //creaPersonas(5);
         creaPeople();
-    }
-    
-    public void posiones()
-    {
-        Texto newTexto =new Texto(0);
-        addObject(newTexto,165,20);
     }
     
     public void prepare()
@@ -280,10 +273,7 @@ public class Casa extends World
         addObject( be3, 800, 267);
         /////////Gasper//////////////////
         Casper jugador = new Casper();
-        addObject(jugador,750,80);
-        
-        //TextoVidas tx1 = new TextoVidas("Puntaje:",1);
-        //addObject(tx1,700,30);
+        addObject(jugador,810,90);
         
     }
 }

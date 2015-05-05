@@ -19,15 +19,15 @@ public class Casper extends Actor
     private int timer = 3000;
     private int timeCreaPosion = 0;
     private int vida=100;
-    private TextoVidas tx1;
+    private Texto tx1;
     private int pocimasRecolectadas=0;
-    private TextoVidas item;
+    private Texto item;
     
     public Casper()
     {
         //sVida = Integer.toString(vida);
-        tx1 = new TextoVidas("Vida:");
-        item = new TextoVidas("Posiones:");
+        tx1 = new Texto("Vida");
+        item = new Texto("Posiones:");
     }
     
     public void act() 
@@ -267,6 +267,7 @@ public class Casper extends Actor
             
         }   
     }
+    
     public boolean ParaPersona()
     {
         boolean oli = false;
@@ -287,11 +288,16 @@ public class Casper extends Actor
         //System.out.println(timer);
         return oli;
     }
+    
     public void danio()
     {
+        World miMundo = getWorld();
+        Casa casa = (Casa)miMundo;
+        BarraPresencial vidaBarra = casa.getVidaBarra();
         if(isTouching(persona.class) && bandPara == false)
         {
             vida--;
+            vidaBarra.detectaPresencia();
         }
         
         if(isTouching(persona.class) && bandPara == true)
@@ -303,6 +309,7 @@ public class Casper extends Actor
             Greenfoot.setWorld(new Menu()); 
         }
     }
+    
     public void gana()
     {
 
@@ -319,13 +326,13 @@ public class Casper extends Actor
     
     public void MuestraVida()
     {
-        tx1.Despliega(""+vida);
-        getWorld().addObject(tx1,700,30);
+        tx1.Despliega("",30);
+        getWorld().addObject(tx1,700,25);
     }
     
     public void MuestraPosiones()
     {
-        item.Despliega(""+pocimasRecolectadas);
-        getWorld().addObject(item,500,30);
+        item.Despliega(""+pocimasRecolectadas,16);
+        getWorld().addObject(item,93,25);
     }
 }

@@ -13,6 +13,7 @@ public class Casa extends World
      * Constructor for objects of class Casa.
      * 
      */
+    BarraPresencial vidaBarra = new BarraPresencial();
     public Casa()
     {    
         super(920, 530, 1); //Resolucion//
@@ -23,9 +24,15 @@ public class Casa extends World
         creaPeople();
     }
     
+    public  BarraPresencial getVidaBarra()
+    {
+        return vidaBarra;
+    }
+    
     public void prepare()
     {
         Imagenes();
+        addObject(vidaBarra,780,25);
     }
     
     

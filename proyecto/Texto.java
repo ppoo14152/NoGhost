@@ -1,67 +1,31 @@
-import greenfoot.*;
-import java.awt.Color;
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
 /**
- * Write a description of class Texto here.
+ * Write a description of class TextoVidas here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
 public class Texto extends Actor
 {
-    /**
-     * Act - do whatever the Texto wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    private int score;
-    public Texto(int sel)
+    private GreenfootImage texto;
+    
+    public int posX = 0;
+    public int posY = 0;
+    public String cadena1;
+    
+    public Texto(String cad)
     {
-        if (sel ==0)
-        {
-           score=0;
-           setImage(new GreenfootImage(200,30));
-           repintar(0);
-        }
-        
-        if (sel ==1)
-        {
-           score=0;
-           setImage(new GreenfootImage(200,30));
-           repintar(1);
-        }
-        
+        cadena1 = cad;
     }
     
-    public void agregar()
+    public void Despliega(String cadena,int tam)
     {
-        score++;
-        repintar(0);
-        repintar(1);
-       
-    }
-    
-    public void repintar(int n)
-    {
-        if(n==0)
-        {
-            GreenfootImage img = getImage();
-            img.clear();
-            img.setColor(Color.WHITE);
-            img.drawString("Posimas: " + score+" Objetivo: 50", 4 , 20);
-        }
-        
-        if(n==1)
-        {
-            GreenfootImage img = getImage();
-            img.clear();
-            img.setColor(Color.WHITE);
-            img.drawString("Posimas: "+ score+" Objetivo: 100", 4 , 20);
-        }
-        
+        super.setImage(new GreenfootImage(cadena1+cadena,tam,java.awt.Color.WHITE,null));
     }
     
     public void act() 
     {
-        //repintar(0);
-        //repintar(1);
-    }
+        // Add your action code here.
+    }    
 }

@@ -1,10 +1,8 @@
 #BlueJ class context
-comment0.params=sel
-comment0.target=Texto(int)
-comment1.params=
-comment1.target=void\ agregar()
-comment2.params=n
-comment2.target=void\ repintar(int)
-comment3.params=
-comment3.target=void\ act()
-numComments=4
+comment0.params=cad
+comment0.target=Texto(java.lang.String)
+comment1.params=cadena\ tam
+comment1.target=void\ Despliega(java.lang.String,\ int)
+comment2.params=
+comment2.target=void\ act()
+numComments=3

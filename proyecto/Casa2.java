@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.awt.Color; // Clase para importar color
 /**
  * Write a description of class Casa2 here.
  * 
@@ -15,7 +15,9 @@ public class Casa2 extends World
      */
     public Casa2()
     {    
-        super(920, 530, 1); //Resolucion//
+        super(920, 530, 1);                     //Resolucion
+        getBackground().setColor(Color.BLACK);  //Establece el fondo color negro
+        getBackground().fill();                 //Pone el fondo establecido
         prepare();
         posiones();
         creaPersonas(10);

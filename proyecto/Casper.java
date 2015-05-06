@@ -22,6 +22,8 @@ public class Casper extends Actor
     private Texto tx1;
     private int pocimasRecolectadas=0;
     private Texto item;
+    private Texto tocandoBase;
+    int dirQueEntre = 0;
     
     public Casper()
     {
@@ -34,7 +36,8 @@ public class Casper extends Actor
     {
         Movimiento();
         tocaPosima();
-        TocandoTuboYElevador();
+        //TocandoTuboYElevador();
+        Tocandotubo();
         PrendeObjeto();
         desocultarItem();
         danio();
@@ -43,57 +46,58 @@ public class Casper extends Actor
         MuestraPosiones();
     }
     
-    
-    
-    
-    public void LimitesPared()
+    public void LimitesParedPiso()
     {
-        if(direccion == 1 && getOneIntersectingObject(Pared.class) != null)
-        {
-            setLocation(getX()-speed,getY());
+        if((getOneIntersectingObject(Pared.class) != null) || (getOneIntersectingObject(Pisos.class) != null )){
+            if(direccion == 1){
+                setLocation(getX()-speed,getY());
+            }
+            else if(direccion == 2){
+                setLocation(getX()+speed,getY());
+            }
+            else if(direccion == 3){
+                setLocation(getX(),getY()+speed);
+            }
+            else if(direccion == 4){
+                setLocation(getX(),getY()-speed);
+            }
+            
         }
-        
-        if(direccion == 2 && getOneIntersectingObject(Pared.class) != null)
-        {
-            setLocation(getX()+speed,getY());
-        }
-        /*if(direccion == 1 && getOneObjectAtOffset(Ancho()/2,0,Pared.class) != null)
-        {
-            setLocation(getX()-speed,getY());
-        }
-        
-        if(direccion == 2 && getOneObjectAtOffset(-Ancho()/2,0,Pared.class) != null)
-        {
-            setLocation(getX()+speed,getY());
-        }*/
-        
-        
     }
     
-    public void LimitesPiso()
+    
+    public void Tocandotubo()
     {
-         if(direccion == 3 && getOneIntersectingObject(Pisos.class) != null)
-        {
-            setLocation(getX(),getY()+speed);
+        //boolean bandEntrada = false;
+        Elevador elev = (Elevador)(getWorld().getObjects(Elevador.class).get(0));
+        Actor elevador = getOneIntersectingObject(Elevador.class); //Checa si tocamos elevador
+        int elevParado = elev.Parado();
+        
+        if( getOneIntersectingObject(BaseElevador.class) != null ){
+            if(bandEntrada == false ){              //Si la bandera es falsa no me dejara entrar
+                if(dirQueEntre == 2){       
+                        setLocation(getX()+speed,getY());
+                }
+            }
+            
         }
         
-        if(direccion == 4 && getOneIntersectingObject(Pisos.class) != null)
+        if(elevParado == 1 && elevador != null)              // Si el elevador esta detenido y esta tocando al elevador
         {
-            setLocation(getX(),getY()-speed);
+            Movimiento();
+            bandEntrada = true;
+            if(direccion ==2 ){
+                dirQueEntre = 2;
+            }
         }
-        
-        /*if(direccion == 3 && getOneObjectAtOffset(0,-Alto()/2,Pisos.class) != null)
-        {
-            setLocation(getX(),getY()+speed);
+        else{
+            bandEntrada = false;
         }
-        
-        if(direccion == 4 && getOneObjectAtOffset(0,Alto()/2,Pisos.class) != null)
-        {
-            setLocation(getX(),getY()-speed);
-        }*/
     }
     
-    public void TocandoTuboYElevador()
+    
+    
+    /*public void TocandoTuboYElevador()
     {   
         Elevador elev = (Elevador)(getWorld().getObjects(Elevador.class).get(0)); 
         
@@ -101,10 +105,6 @@ public class Casper extends Actor
         Actor baseElev = getOneIntersectingObject(BaseElevador.class);
         int x = elev.Parado();
         int varDinamica = elev.getY();
-        
-        
-        
-  
         if(direccion == 2 && getOneObjectAtOffset(-Ancho()/2,0,BaseElevador.class) != null && bandEntrada == false)
         {
             
@@ -121,7 +121,7 @@ public class Casper extends Actor
         
         if(x == 1 && elevador != null) // Si el elevador esta detenido y esta tocando al elevador
         {
-            Movimiento();
+            //Movimiento();
             bandEntrada = true;
         }
         
@@ -159,7 +159,8 @@ public class Casper extends Actor
             bandElevador = 0;
             bandEntrada = false;
         }
-    }
+    }*/
+    
     
     public void tocaPosima() 
     {
@@ -214,7 +215,6 @@ public class Casper extends Actor
                 if(timeCreaPosion >= 100 ){
                    if(direccion==1){
                       getWorld().addObject(new posion(),getX()+100,getY());
-                      //posimasRecolectadas++;
                    }    
                    
                    if(direccion == 2){
@@ -231,14 +231,13 @@ public class Casper extends Actor
     
     public void Movimiento()
     {
-        int y=getY();
         
         if(Greenfoot.isKeyDown("right"))
         {
             direccion = 1;                                  //1 Derecha
             this.setLocation(this.getX()+speed,this.getY());
             setImage(gasperDer);
-            LimitesPared();
+            LimitesParedPiso();
         }
         
         if(Greenfoot.isKeyDown("left"))
@@ -246,25 +245,21 @@ public class Casper extends Actor
             direccion = 2;                                  //2 Izquierda
             this.setLocation(this.getX()-speed,this.getY());
             setImage(gasperIzq);
-            LimitesPared();
-        
+            LimitesParedPiso();
         }
         
         if(Greenfoot.isKeyDown("up"))
         {
             direccion = 3;                                  //3 Arriba
             this.setLocation(this.getX(),this.getY()-speed);
-            LimitesPiso();
-            
+            LimitesParedPiso();
         }
         
-        if(Greenfoot.isKeyDown("down"))
+        if(Greenfoot.isKeyDown("down"))                     //4 Abajo
         {
             direccion = 4;
             this.setLocation(this.getX(),this.getY()+speed);
-            //LimitesPared();
-            LimitesPiso();
-            
+            LimitesParedPiso();
         }   
     }
     

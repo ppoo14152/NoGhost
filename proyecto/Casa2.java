@@ -143,70 +143,73 @@ public class Casa2 extends World
 
         //////////Muebles/////////////////
         Muebles m1 = new Muebles(0);//sillon cafe claro
-        addObject(m1, 680,220);
+        addObject(m1, 270,340);
         Muebles m2 = new Muebles(1);//mueble de la tv
-        addObject(m2, 550,217);
-        Muebles m3 = new Muebles(2);
-        addObject(m3, 260,80);
-        Muebles m4 = new Muebles(3);
-        addObject(m4, 330,110);
-        Muebles m5 = new Muebles(4);
-        addObject(m5, 250,470);
+        addObject(m2, 450,458);
+        //Muebles m3 = new Muebles(2);//mueble delgado cafe ultimo piso
+        //addObject(m3, 260,80);
+        //Muebles m4 = new Muebles(3);//sillon cafe de ultimo piso
+        //addObject(m4, 330,110);
+        Muebles m5 = new Muebles(4);//sillon blanco ultimo piso
+        addObject(m5, 260,105);
         Muebles m6 = new Muebles(13);//lampara de piso
-        addObject(m6, 200,85);
-        Muebles m7 = new Muebles(5);
-        addObject(m7, 425,453);
-        Muebles m8 = new Muebles(6);
-        addObject(m8, 230,330);
-        Muebles m9 = new Muebles(7);
-        addObject(m9, 280,350);
-        Muebles m10 = new Muebles(8);//
-        addObject(m10, 600,100);
-        Muebles m11 = new Muebles(9);//lampara1
-        addObject(m11, 618,52);
+        addObject(m6, 310,81);
+        //Muebles m7 = new Muebles(5);//mueble blanco con libros de primer piso
+        //addObject(m7, 425,453);
+        //Muebles m8 = new Muebles(6);//refrigerador
+        //addObject(m8, 230,330);
+        Muebles m9 = new Muebles(7);//estufa
+        addObject(m9, 580,225);
+        Muebles m10 = new Muebles(42);//mueble blanco de tv
+        addObject(m10, 600,90);
+        //Muebles m11 = new Muebles(9);//lampara1
+        //addObject(m11, 618,52);
         Muebles m12 = new Muebles(10);//cuadro cafe
-        addObject(m12, 450,52);
+        addObject(m12, 670,315);
         Muebles m13 = new Muebles(11);//cuadro azul
-        addObject(m13, 500,430);
-        Muebles m14 = new Muebles(12);//florero1
-        addObject(m14, 580,52);
-        Muebles m15 = new Muebles(15);//wc
+        addObject(m13, 200,430);
+        Muebles m14 = new Muebles(12);//florero flores blancas
+        addObject(m14, 510,79);
+        Muebles m15 = new Muebles(41);//mueble cafe tercer piso
         addObject(m15, 222,223);
-        Muebles m16 = new Muebles(16);//bañera
-        addObject(m16, 279,235);
-        Muebles m17 = new Muebles(17);//foco baño
-        addObject(m17, 290,180);
+        //Muebles m16 = new Muebles(16);//bañera
+        //addObject(m16, 479,235);
+        Muebles m17 = new Muebles(17);//foco comedor floreado
+        addObject(m17, 490,180);
         Muebles m18 = new Muebles(18);//comedor
-        addObject(m18, 500,355); 
-        Muebles m19 = new Muebles(19);//foco comedor
-        addObject(m19, 500,300); 
-        Muebles m20 = new Muebles(20);//tele
-        addObject(m20, 575,354); 
+        addObject(m18, 390,235); 
+        //Muebles m19 = new Muebles(19);//foco comedor
+        //addObject(m19, 500,300); 
+        Muebles m20 = new Muebles(43);//mueble nuevo
+        addObject(m20, 539,354); 
+        Muebles m50 = new Muebles(20);//tele de piso
+        addObject(m50, 175,354); 
         Muebles m21 = new Muebles(21);//buro bajo flor roja
-        addObject(m21, 180,360); 
+        addObject(m21, 650,240); 
         Muebles m22 = new Muebles(22);// florero rojo
-        addObject(m22, 180,337);
-        Muebles m23 = new Muebles(23);// buro 2
-        addObject(m23, 150,345);
+        addObject(m22, 650,217);
+        Muebles m42 = new Muebles(22);// florero rojo
+        addObject(m42, 679,186);
+        Muebles m23 = new Muebles(23);// buro 2 bajo flores rojas
+        addObject(m23, 680,225);
         Muebles m24 = new Muebles(24);// reloj
-        addObject(m24, 150,312);
+        addObject(m24, 540,305);
         Muebles m25 = new Muebles(25);// foco triple
-        addObject(m25, 360,425);
-        Muebles m26 = new Muebles(26);// buro blanco
+        addObject(m25, 360,325);
+        Muebles m26 = new Muebles(26);// buro blanco primer piso
         addObject(m26, 321,475);
-        Muebles m27 = new Muebles(26);// buro blanco
-        addObject(m27, 500,475);
+        Muebles m27 = new Muebles(26);// buro blanco ultimo piso
+        addObject(m27, 510,115);
         Muebles m28 = new Muebles(27);// globos
         addObject(m28, 660,435);
         Muebles m29 = new Muebles(28);// pelota
-        addObject(m29, 575,483);
-        Muebles m30 = new Muebles(29);// silla
-        addObject(m30, 620,483);
-        Muebles m31 = new Muebles(14);// tele google
-        addObject(m31, 620,450);
+        addObject(m29, 245,483);
+        //Muebles m30 = new Muebles(29);// silla
+        //addObject(m30, 620,483);
+        //Muebles m31 = new Muebles(14);// tele google
+        //addObject(m31, 620,450);
         Muebles m32 = new Muebles(30);//  flores rosas morado
         addObject(m32, 320,445);
-        
         /////////Puerta///////////////////
         Puerta p1 = new Puerta();
         addObject(p1, 790, 85);

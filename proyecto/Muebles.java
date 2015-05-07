@@ -64,6 +64,14 @@ public class Muebles extends Estaticos
         imagenes.add(new GreenfootImage("teleApagada.png"));
         imagenes.add(new GreenfootImage("tvApagada.png"));
         
+        imagenes.add(new GreenfootImage("gabinete blanco.png"));
+        imagenes.add(new GreenfootImage("juego de sala.png"));
+        imagenes.add(new GreenfootImage("mueble cafe.png"));
+        imagenes.add(new GreenfootImage("mueble de tv blanco.png"));
+        imagenes.add(new GreenfootImage("nuevo buro.png"));
+        imagenes.add(new GreenfootImage("sillon rojo.png"));
+        imagenes.add(new GreenfootImage("cuarto.png"));    
+        
                     
         
         
@@ -261,6 +269,41 @@ public class Muebles extends Estaticos
         {
             setImage((GreenfootImage)imagenes.get(38));
             numero = 38;
+        }
+        if(sel == 39)//gabinete blanco
+        {
+            setImage((GreenfootImage)imagenes.get(39));
+            numero = 39;
+        }
+        if(sel == 40)//juego sala
+        {
+            setImage((GreenfootImage)imagenes.get(40));
+            numero = 40;
+        }
+        if(sel == 41)//mueble cafe
+        {
+            setImage((GreenfootImage)imagenes.get(41));
+            numero = 41;
+        }
+        if(sel == 42)//mueble blanco de tv
+        {
+            setImage((GreenfootImage)imagenes.get(42));
+            numero = 42;
+        }
+        if(sel == 43)//nuevo buro
+        {
+            setImage((GreenfootImage)imagenes.get(43));
+            numero = 43;
+        }
+        if(sel == 44)//sillon rojo
+        {
+            setImage((GreenfootImage)imagenes.get(44));
+            numero = 44;
+        }
+        if(sel == 45)//cuarto
+        {
+            setImage((GreenfootImage)imagenes.get(45));
+            numero = 45;
         }
     }
     

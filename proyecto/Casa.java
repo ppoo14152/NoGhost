@@ -260,7 +260,9 @@ public class Casa extends World
         //Puerta p1 = new Puerta();
         //addObject(p1, 805, 447);
         
-        Objetivo obj = new Objetivo();
+        Objetivo2 obj1 = new Objetivo2(0);
+        addObject(obj1, 805, 447);
+        Objetivo obj = new Objetivo(1);
         addObject(obj, 805, 447);
         
         /////////Elevador/////////////////

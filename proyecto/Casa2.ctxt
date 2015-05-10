@@ -1,11 +1,12 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Casa2()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Casa2.\r\n\ \r\n
 comment1.params=
-comment1.target=void\ prepare()
-comment2.params=numero
-comment2.target=void\ creaPersonas(int)
-comment3.params=
-comment3.target=void\ Imagenes()
-numComments=4
+comment1.target=BarraPresencial\ getVidaBarra()
+comment2.params=
+comment2.target=void\ prepare()
+comment3.params=numero
+comment3.target=void\ creaPersonas(int)
+comment4.params=
+comment4.target=void\ Imagenes()
+numComments=5

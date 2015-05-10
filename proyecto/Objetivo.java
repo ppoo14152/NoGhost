@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class Objetivo here.
  * 
@@ -12,14 +12,24 @@ public class Objetivo extends Estaticos
      * Act - do whatever the Objetivo wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public GreenfootImage imagenes;
-    public Objetivo()
+    private ArrayList imagenes;
+    public int hab;
+    public Objetivo(int i)
     {
-        imagenes = new GreenfootImage("PC.png");
+        //imagenes = new GreenfootImage("PC.png");
+        hab = i;
+        
+        imagenes = new ArrayList();
+        imagenes.add(new GreenfootImage("PC.png"));
     }
-    public void act() 
+    public void act()
     {
         // Add your action code here.
-        
-    }    
+        setImage((GreenfootImage)imagenes.get(0));
+    }
+    
+    public int habilitado()
+    {
+        return hab;
+    }
 }

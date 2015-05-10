@@ -1,6 +1,8 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Objetivo()
+comment0.params=i
+comment0.target=Objetivo(int)
 comment1.params=
 comment1.target=void\ act()
-numComments=2
+comment2.params=
+comment2.target=int\ habilitado()
+numComments=3

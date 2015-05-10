@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
  * Write a description of class Casper here.
  * 
@@ -22,8 +21,9 @@ public class Casper extends Actor
     private Texto tx1;
     private int pocimasRecolectadas=0;
     private Texto item;
-    private Texto tocandoBase;
-    int dirQueEntre = 0;
+    private Texto tocandoBase;// 
+    private boolean hola = false;
+    int dirQueEntre = 0;//
     
     public Casper()
     {
@@ -34,10 +34,13 @@ public class Casper extends Actor
     
     public void act() 
     {
-        Movimiento();
+        if(!hola)
+        {
+            Movimiento();
+        }
         tocaPosima();
-        //TocandoTuboYElevador();
-        Tocandotubo();
+        TocandoTuboYElevador();
+        //Tocandotubo();
         PrendeObjeto();
         desocultarItem();
         danio();
@@ -65,8 +68,7 @@ public class Casper extends Actor
         }
     }
     
-    
-    public void Tocandotubo()
+    /*public void Tocandotubo()
     {
         //boolean bandEntrada = false;
         Elevador elev = (Elevador)(getWorld().getObjects(Elevador.class).get(0));
@@ -93,11 +95,11 @@ public class Casper extends Actor
         else{
             bandEntrada = false;
         }
-    }
+    }*/
     
     
     
-    /*public void TocandoTuboYElevador()
+    public void TocandoTuboYElevador()
     {   
         Elevador elev = (Elevador)(getWorld().getObjects(Elevador.class).get(0)); 
         
@@ -105,6 +107,7 @@ public class Casper extends Actor
         Actor baseElev = getOneIntersectingObject(BaseElevador.class);
         int x = elev.Parado();
         int varDinamica = elev.getY();
+        
         if(direccion == 2 && getOneObjectAtOffset(-Ancho()/2,0,BaseElevador.class) != null && bandEntrada == false)
         {
             
@@ -121,7 +124,10 @@ public class Casper extends Actor
         
         if(x == 1 && elevador != null) // Si el elevador esta detenido y esta tocando al elevador
         {
-            //Movimiento();
+            if(!hola)
+            {
+                Movimiento();
+            }
             bandEntrada = true;
         }
         
@@ -138,6 +144,7 @@ public class Casper extends Actor
             if(x == 1)
             {
                 varEstatica = elev.getY();
+                hola = true;
             }
         }
         
@@ -158,8 +165,9 @@ public class Casper extends Actor
             getWorld().setPaintOrder(Casper.class, BaseElevador.class, Elevador.class);
             bandElevador = 0;
             bandEntrada = false;
+            hola = false;
         }
-    }*/
+    }
     
     
     public void tocaPosima() 
@@ -287,12 +295,31 @@ public class Casper extends Actor
     public void danio()
     {
         World miMundo = getWorld();
-        Casa casa = (Casa)miMundo;
-        BarraPresencial vidaBarra = casa.getVidaBarra();
-        if(isTouching(persona.class) && bandPara == false)
+        Objetivo objetivo = (Objetivo)(getWorld().getObjects(Objetivo.class).get(0));  
+        Objetivo2 objetivo1 = (Objetivo2)(getWorld().getObjects(Objetivo2.class).get(0));
+        
+        int op = objetivo.habilitado();
+        int op1 = objetivo1.habilitado();
+        
+        if(op == 1)
         {
-            vida--;
-            vidaBarra.detectaPresencia();
+            Casa casa = (Casa)miMundo;
+            BarraPresencial vidaBarra = casa.getVidaBarra();
+            if(isTouching(persona.class) && bandPara == false)
+            {
+                vida--;
+                vidaBarra.detectaPresencia();
+            }
+        }
+        if(op1 == 1)
+        {
+            Casa2 casa = (Casa2)miMundo;
+            BarraPresencial vidaBarra = casa.getVidaBarra();
+            if(isTouching(persona.class) && bandPara == false)
+            {
+                vida--;
+                vidaBarra.detectaPresencia();
+            }
         }
         
         if(isTouching(persona.class) && bandPara == true)
@@ -306,15 +333,19 @@ public class Casper extends Actor
     }
     
     public void gana()
-    {
-
-        if (isTouching(Objetivo.class))
-        {
-            Greenfoot.setWorld(new Casa2()); 
-        }
+    { 
+        Objetivo objetivo = (Objetivo)(getWorld().getObjects(Objetivo.class).get(0));  
+        Objetivo2 objetivo1 = (Objetivo2)(getWorld().getObjects(Objetivo2.class).get(0));
         
-        if (isTouching(Objetivo2.class))
+        int op = objetivo.habilitado();
+        int op1 = objetivo1.habilitado();
+        
+        if (isTouching(Objetivo.class) && op == 1)
         {
+            Greenfoot.setWorld(new Casa2());
+        }
+        if (isTouching(Objetivo2.class) && op1 == 1)
+        { 
             Greenfoot.setWorld(new Menu()); 
         }
     }

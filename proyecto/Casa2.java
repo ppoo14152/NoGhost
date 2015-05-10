@@ -13,6 +13,7 @@ public class Casa2 extends World
      * Constructor for objects of class Casa2.
      * 
      */
+    BarraPresencial vidaBarra = new BarraPresencial();
     public Casa2()
     {    
         super(920, 530, 1);                     //Resolucion
@@ -20,6 +21,11 @@ public class Casa2 extends World
         getBackground().fill();                 //Pone el fondo establecido
         prepare();
         creaPersonas(10);
+    }
+    
+    public  BarraPresencial getVidaBarra()
+    {
+        return vidaBarra;
     }
     
     public void prepare()
@@ -213,7 +219,10 @@ public class Casa2 extends World
         /////////Puerta///////////////////
         Puerta p1 = new Puerta();
         addObject(p1, 790, 85);
-        Objetivo2 obj = new Objetivo2();
+        
+        Objetivo obj1 = new Objetivo(0);
+        addObject(obj1, 805, 447);
+        Objetivo2 obj = new Objetivo2(1);
         addObject(obj, 805, 447);
         
         /////////Elevador/////////////////

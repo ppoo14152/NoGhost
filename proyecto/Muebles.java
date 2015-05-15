@@ -80,6 +80,7 @@ public class Muebles extends Estaticos
             setImage((GreenfootImage)imagenes.get(0));
             numero = 0;
         }
+        
         if(sel == 1)
         {
             setImage((GreenfootImage)imagenes.get(1));
@@ -310,62 +311,71 @@ public class Muebles extends Estaticos
     public void act() 
     {
         Prende();
-    }    
+    }
     
     public void Prende()
     {
         Casper casper = (Casper)(getWorld().getObjects(Casper.class).get(0));
         Actor jug = getOneIntersectingObject(Casper.class); 
-        
         boolean prendio = casper.PrendeObjeto();
         
-        if(hola)
+         if(hola)
         {
             RegresaImagenInicial();
         }
         
+        
         if(prendio)
         {
+            
             if(numero == 13 && jug != null)//se cambiara lampara de piso 
             {
                 setImage((GreenfootImage)imagenes.get(35));//nueva imagen
                 hola = true;
             }
+            
             if(numero == 9 && jug != null)//se cambiara  lampara pequeña ultimo piso
             {
                 setImage((GreenfootImage)imagenes.get(36));//nueva imagen
                 hola = true;
             }
+            
             if(numero == 1 && jug != null)//se cambiara mueble de televisor
             {
                 setImage((GreenfootImage)imagenes.get(32));//nueva imagen
                 hola = true;
             }
+            
             if(numero == 17 && jug != null)//se cambiara  lampara de banio
             {
                 setImage((GreenfootImage)imagenes.get(33));//nueva imagen
                 hola = true;
             }
+            
             if(numero == 20 && jug != null)//se cambiara tv de piso
             {
                 setImage((GreenfootImage)imagenes.get(37));//nueva imagen
                 hola = true;
             }
+            
             if(numero == 14 && jug != null)//se cambiara tv google
             {
                 setImage((GreenfootImage)imagenes.get(38));//nueva imagen
                 hola = true;
             }
+            
             if(numero == 19 && jug != null)//se cambiara foco de la cocina
             {
                 setImage((GreenfootImage)imagenes.get(34));//nueva imagen
                 hola = true;
             }
+            
             if(numero == 25 && jug != null)//se cambiara foco del primer piso
             {
                 setImage((GreenfootImage)imagenes.get(31));//nueva imagen
                 hola = true;
             }
+            
         }
     }
     

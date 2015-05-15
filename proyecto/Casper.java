@@ -18,9 +18,9 @@ public class Casper extends Actor
     private int timer = 3000;
     private int timeCreaPosion = 0;
     private int vida=100;
-    private Texto tx1;
+    private Texto txVida;
     private int pocimasRecolectadas=0;
-    private Texto item;
+    private Texto txPosima;
     private Texto tocandoBase;// 
     private boolean hola = false;
     int dirQueEntre = 0;//
@@ -28,8 +28,8 @@ public class Casper extends Actor
     public Casper()
     {
         //sVida = Integer.toString(vida);
-        tx1 = new Texto("Vida");
-        item = new Texto("Posiones:");
+        txVida = new Texto("Vida");
+        txPosima = new Texto("Posiones:");
     }
     
     public void act() 
@@ -49,24 +49,7 @@ public class Casper extends Actor
         MuestraPosiones();
     }
     
-    public void LimitesParedPiso()
-    {
-        if((getOneIntersectingObject(Pared.class) != null) || (getOneIntersectingObject(Pisos.class) != null )){
-            if(direccion == 1){
-                setLocation(getX()-speed,getY());
-            }
-            else if(direccion == 2){
-                setLocation(getX()+speed,getY());
-            }
-            else if(direccion == 3){
-                setLocation(getX(),getY()+speed);
-            }
-            else if(direccion == 4){
-                setLocation(getX(),getY()-speed);
-            }
-            
-        }
-    }
+    
     
     /*public void Tocandotubo()
     {
@@ -88,7 +71,7 @@ public class Casper extends Actor
         {
             Movimiento();
             bandEntrada = true;
-            if(direccion ==2 ){
+            if(direccion == 2 ){
                 dirQueEntre = 2;
             }
         }
@@ -183,16 +166,6 @@ public class Casper extends Actor
         
     }
     
-    private int Alto()
-    {
-        return getImage().getHeight();
-    }
-    
-    public int Ancho()
-    {
-        return getImage().getWidth();
-    }
-    
     public boolean PrendeObjeto()
     {
         boolean band = false;
@@ -219,14 +192,20 @@ public class Casper extends Actor
         
         if(isTouching(Muebles.class)){
             
-             if(Greenfoot.isKeyDown("space")){
+             if(Greenfoot.isKeyDown("d")){
                 if(timeCreaPosion >= 100 ){
                    if(direccion==1){
-                      getWorld().addObject(new posion(),getX()+100,getY());
+                       
+                       //if(objMueble.setobjInteractivo()==true)
+                            getWorld().addObject(new posion(),getX()+50,getY());
+                            
                    }    
                    
                    if(direccion == 2){
-                    getWorld().addObject(new posion(),getX()-100,getY());
+                       
+                       //if(objMueble.setobjInteractivo()==true)
+                            getWorld().addObject(new posion(),getX()-50,getY());
+                            
                    }
                    
                    timeCreaPosion=0;
@@ -234,41 +213,6 @@ public class Casper extends Actor
              }
         }
         timeCreaPosion++;
-    }
-    
-    
-    public void Movimiento()
-    {
-        
-        if(Greenfoot.isKeyDown("right"))
-        {
-            direccion = 1;                                  //1 Derecha
-            this.setLocation(this.getX()+speed,this.getY());
-            setImage(gasperDer);
-            LimitesParedPiso();
-        }
-        
-        if(Greenfoot.isKeyDown("left"))
-        {
-            direccion = 2;                                  //2 Izquierda
-            this.setLocation(this.getX()-speed,this.getY());
-            setImage(gasperIzq);
-            LimitesParedPiso();
-        }
-        
-        if(Greenfoot.isKeyDown("up"))
-        {
-            direccion = 3;                                  //3 Arriba
-            this.setLocation(this.getX(),this.getY()-speed);
-            LimitesParedPiso();
-        }
-        
-        if(Greenfoot.isKeyDown("down"))                     //4 Abajo
-        {
-            direccion = 4;
-            this.setLocation(this.getX(),this.getY()+speed);
-            LimitesParedPiso();
-        }   
     }
     
     public boolean ParaPersona()
@@ -352,13 +296,76 @@ public class Casper extends Actor
     
     public void MuestraVida()
     {
-        tx1.Despliega("",30);
-        getWorld().addObject(tx1,700,25);
+        txVida.Despliega("",30);
+        getWorld().addObject(txVida,700,25);
     }
     
     public void MuestraPosiones()
     {
-        item.Despliega(""+pocimasRecolectadas,16);
-        getWorld().addObject(item,93,25);
+        txPosima.Despliega(""+pocimasRecolectadas,16);
+        getWorld().addObject(txPosima,93,25);
+    }
+    
+    public void Movimiento()
+    {
+        
+        if(Greenfoot.isKeyDown("right"))
+        {
+            direccion = 1;                                  //1 Derecha
+            this.setLocation(this.getX()+speed,this.getY());
+            setImage(gasperDer);
+            LimitesParedPiso();
+        }
+        
+        if(Greenfoot.isKeyDown("left"))
+        {
+            direccion = 2;                                  //2 Izquierda
+            this.setLocation(this.getX()-speed,this.getY());
+            setImage(gasperIzq);
+            LimitesParedPiso();
+        }
+        
+        if(Greenfoot.isKeyDown("up"))
+        {
+            direccion = 3;                                  //3 Arriba
+            this.setLocation(this.getX(),this.getY()-speed);
+            LimitesParedPiso();
+        }
+        
+        if(Greenfoot.isKeyDown("down"))                     //4 Abajo
+        {
+            direccion = 4;
+            this.setLocation(this.getX(),this.getY()+speed);
+            LimitesParedPiso();
+        }   
+    }
+    
+    public void LimitesParedPiso()
+    {
+        if((getOneIntersectingObject(Pared.class) != null) || (getOneIntersectingObject(Pisos.class) != null )){
+            if(direccion == 1){
+                setLocation(getX()-speed,getY());
+            }
+            else if(direccion == 2){
+                setLocation(getX()+speed,getY());
+            }
+            else if(direccion == 3){
+                setLocation(getX(),getY()+speed);
+            }
+            else if(direccion == 4){
+                setLocation(getX(),getY()-speed);
+            }
+            
+        }
+    }
+    
+     private int Alto()
+    {
+        return getImage().getHeight();
+    }
+    
+    public int Ancho()
+    {
+        return getImage().getWidth();
     }
 }

@@ -31,6 +31,7 @@ public class Casa2 extends World
     public void prepare()
     {
         Imagenes();
+        addObject(vidaBarra,780,25);
     }
     
     public void creaPersonas(int numero){

@@ -38,6 +38,7 @@ public class Casper extends Actor
         {
             Movimiento();
         }
+        
         tocaPosima();
         TocandoTuboYElevador();
         //Tocandotubo();

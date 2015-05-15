@@ -36,7 +36,7 @@ public class Casa2 extends World
     
     public void creaPersonas(int numero){
         for(int i=0;i<numero;i++){
-            persona p=new persona(i);
+            persona p=new ninio(i);
             int y;
             int v=Greenfoot.getRandomNumber(3);
             int x=Greenfoot.getRandomNumber(getWidth());  //getWidth()

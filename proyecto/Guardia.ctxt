@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=n
+comment0.target=Guardia(int)
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ saltoAutomatico()
+comment3.params=
+comment3.target=void\ caida()
+comment4.params=
+comment4.target=boolean\ enPiso()
+comment5.params=piso
+comment5.target=void\ moveraTierra(greenfoot.Actor)
+comment6.params=
+comment6.target=void\ chekaPiso()
+comment7.params=
+comment7.target=void\ saltar()
+comment8.params=
+comment8.target=int\ altoImagen()
+comment9.params=
+comment9.target=int\ anchoImagen()
+numComments=10

@@ -18,13 +18,12 @@ public class Casper extends Actor
     private int timeCreaPosion = 0;
     private int timeUsaPosion = 0;
     //******************************************************//
-    private int vida=100;
+    private int vida = 100;
     private Texto txVida;
-    private int pocimasRecolectadas=0;
     private Texto txPosima;
-    private Texto tocandoBase;// 
-    private boolean hola = false;
-    
+    private Texto txItem;
+    private int pocimasRecolectadas = 0;
+    private int itemRecolectados = 0;
     //********** variables para el elevador **********//
     private int dirQueEntre;                        // checando en la direccion que estoy 
     private boolean tocandoElevador = false;
@@ -37,6 +36,7 @@ public class Casper extends Actor
         //sVida = Integer.toString(vida);
         txVida = new Texto("Vida");
         txPosima = new Texto("Posiones:");
+        txItem = new Texto("Items:");
     }
     
     public void act() 
@@ -51,14 +51,15 @@ public class Casper extends Actor
         }
         
         tocaPosima();
+        tocaItem();
         Tocandotubo();
-        //TocandoTuboYElevador();
         PrendeObjeto();
         desocultarItem();
         danio();
         gana();
         MuestraVida();
         MuestraPosiones();
+        MuestraItems();
         usaPosima();
         
     }
@@ -146,6 +147,19 @@ public class Casper extends Actor
         
     }
     
+    public void tocaItem() 
+    {
+        Actor unItem;
+        unItem = getOneObjectAtOffset(0,0,Item.class);
+        if(unItem !=null){
+        World mundo;
+        mundo=getWorld();
+        mundo.removeObject(unItem);
+        itemRecolectados++;
+        }
+        
+    }
+    
     public boolean PrendeObjeto()
     {
         boolean band = false;                       // Bandera para detectar si Prendio el objeto   
@@ -167,7 +181,7 @@ public class Casper extends Actor
     {
         if(Greenfoot.isKeyDown("z"))
             {
-                if(timeUsaPosion >= 1000 && pocimasRecolectadas > 0 ){
+                if(timeUsaPosion >= 800 && pocimasRecolectadas > 0 ){
                     bandPara = true;
                     pocimasRecolectadas--;
                     timeUsaPosion=0;
@@ -182,20 +196,29 @@ public class Casper extends Actor
         World mundo;
         mundo=getWorld();
         java.util.List lstMuebles = mundo.getObjects(Muebles.class);
-        
+        int cualItem= 0;
         if(isTouching(Muebles.class)){
             
              if(Greenfoot.isKeyDown("d")){
+                 cualItem = Greenfoot.getRandomNumber(2);
                 if(timeCreaPosion >= 100 ){
                    if(direccion==1){
-                       
-                            getWorld().addObject(new posion(),getX()+50,getY());
                             
+                            if(cualItem == 1){
+                                getWorld().addObject(new posion(),getX()+50,getY());
+                            }
+                            else{
+                                getWorld().addObject(new Item(),getX()+50,getY());
+                            }
                    }    
                    
                    if(direccion == 2){
-                       
-                            getWorld().addObject(new posion(),getX()-50,getY());
+                            if(cualItem == 1){
+                                getWorld().addObject(new posion(),getX()-50,getY());
+                            }
+                            else{
+                                getWorld().addObject(new Item(),getX()-50,getY());
+                            }
                             
                    }
                    
@@ -295,6 +318,12 @@ public class Casper extends Actor
     {
         txPosima.Despliega(""+pocimasRecolectadas,16);
         getWorld().addObject(txPosima,93,25);
+    }
+    
+    public void MuestraItems()
+    {
+        txItem.Despliega(""+itemRecolectados,16);
+        getWorld().addObject(txItem,203,25);
     }
     
     public void movDerIzq()

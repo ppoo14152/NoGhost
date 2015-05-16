@@ -39,7 +39,7 @@ public class adulto extends persona
         World m=getWorld();
         if (parate==false)
         {
-            if(getX()>=m.getWidth()-150||getX()<=120){
+            if(getX()>=m.getWidth()-160||getX()<=120){
                 run1.mirrorHorizontally();
                 run2.mirrorHorizontally();
                 run3.mirrorHorizontally();
@@ -108,7 +108,7 @@ public class adulto extends persona
     
     public void saltoAutomatico()
     {
-        if( tiempoSalto == 150 && saltando == false)
+        if( tiempoSalto == 120 && saltando == false)
         {
             saltar();
             tiempoSalto = 0;

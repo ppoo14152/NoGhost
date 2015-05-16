@@ -45,6 +45,7 @@ public class Casa extends World
         ninio pe5 = new ninio(5);
         Guardia gu1 = new Guardia(1);
         Guardia gu2 = new Guardia(2);
+        adulto ad1 = new adulto(1);
         
         
         for(int i = 0; i < 6; i++ ){
@@ -64,6 +65,7 @@ public class Casa extends World
             
             if(i==2){
                 addObject(pe2,x,238);   //creando en el piso 2
+                addObject(ad1,x,238);   //creando en el piso 2
             }
             
             if(i==3){

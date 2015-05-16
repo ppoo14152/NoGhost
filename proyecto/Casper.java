@@ -10,8 +10,6 @@ public class Casper extends Actor
     private GreenfootImage gasperIzq= new GreenfootImage("CasperJuego.png");
     private GreenfootImage gasperDer= new GreenfootImage("CasperJuegoder.png");
     public int direccion;
-    private int bandElevador = 0;
-    private int varEstatica = 0;
     private int speed = 5 ;
     private boolean bandEntrada = false;
     private boolean bandPara;
@@ -109,99 +107,32 @@ public class Casper extends Actor
            bandEntrada = false;
        }
        
-       if(Greenfoot.isKeyDown("e")){
-           getWorld().setPaintOrder(BaseElevador.class, Elevador.class, Casper.class);
-           activado=1;
-           distancia = getY() - elev.getY();
-           bandEntrada= true;
-      
-       }
-           
-       if(Greenfoot.isKeyDown("s")){
-           activado=0;
-           getWorld().setPaintOrder(Casper.class, BaseElevador.class, Elevador.class);
-           //bandEntrada = false;
-       }
+       if( bandEntrada == true && elevador != null ){
        
-       if(activado==1){
+           if(Greenfoot.isKeyDown("e")){
+               getWorld().setPaintOrder(BaseElevador.class, Elevador.class, Casper.class);
+               activado=1;
+               distancia = getY() - elev.getY();
+               bandEntrada= true;
+      
+            }
+           if(parado == 1){
+               if(Greenfoot.isKeyDown("s")){
+                   activado=0;
+                   getWorld().setPaintOrder(Casper.class, BaseElevador.class, Elevador.class);
+                   //bandEntrada = false;
+                }
+            }
+       
+           if(activado==1){
            
-                //if(parado==0){ 
-                    setLocation(getX(),elev.getY()+distancia);
-                //}
-       }
+                    if(parado==0){ 
+                        setLocation(getX(),elev.getY()+distancia);
+                    }
+           }
+        }
     }
-    
-    /*public void TocandoTuboYElevador()
-    {   
-        Elevador elev = (Elevador)(getWorld().getObjects(Elevador.class).get(0)); 
-        
-        Actor elevador = getOneIntersectingObject(Elevador.class); 
-        Actor baseElev = getOneIntersectingObject(BaseElevador.class);
-        int x = elev.Parado();
-        int varDinamica = elev.getY();
-        
-        if(direccion == 2 && getOneObjectAtOffset(-Ancho()/2,0,BaseElevador.class) != null && bandEntrada == false)
-        {
-            
-            setLocation(getX()+speed,getY());
-           
-        }
-        
-        if(direccion == 1 && getOneObjectAtOffset(Ancho()/2,0,BaseElevador.class) != null && bandEntrada == false)
-        {
-            
-            setLocation(getX()-speed,getY());
-           
-        }
-        
-        if(x == 1 && elevador != null) // Si el elevador esta detenido y esta tocando al elevador
-        {
-            if(!hola)
-            {
-                //Movimiento();
-            }
-            bandEntrada = true;
-        }
-        
-        if(x == 0 && elevador == null) // Si el elevador esta detenido y no esta tocando al elevador
-        {
-            bandEntrada = false;
-        }
-        
-        if(x == 1 && elevador != null && Greenfoot.isKeyDown("e"))
-        { 
-            getWorld().setPaintOrder(BaseElevador.class, Elevador.class, Casper.class);
-            
-            bandElevador = 1;
-            if(x == 1)
-            {
-                varEstatica = elev.getY();
-                hola = true;
-            }
-        }
-        
-        if(bandElevador == 1 && getOneObjectAtOffset(0,Alto()/2,Pisos.class) == null && x == 0)
-        {
-            if(varDinamica < varEstatica)
-            {
-                setLocation(getX(),getY()-1);
-            }
-            if(varDinamica > varEstatica)
-            {
-                setLocation(getX(),getY()+1);
-            }
-        }
-        
-        if(x == 1 && bandElevador == 1 && Greenfoot.isKeyDown("s"))
-        {
-            getWorld().setPaintOrder(Casper.class, BaseElevador.class, Elevador.class);
-            bandElevador = 0;
-            bandEntrada = false;
-            hola = false;
-        }
-    }*/
-    
-    
+
     public void tocaPosima() 
     {
         Actor botella;

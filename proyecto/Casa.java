@@ -20,7 +20,6 @@ public class Casa extends World
         getBackground().setColor(Color.BLACK);
         getBackground().fill();
         prepare();
-        //creaPersonas(5);
         creaPeople();
     }
     
@@ -39,12 +38,14 @@ public class Casa extends World
     public void creaPeople()
     {
         int x;
-        persona pe1 = new ninio(1);
-        persona pe2 = new ninio(2);
-        persona pe3 = new ninio(3);
-        persona pe4 = new ninio(4);
-        persona pe5 = new ninio(5);
+        ninio pe1 = new ninio(1);
+        ninio pe2 = new ninio(2);
+        ninio pe3 = new ninio(3);
+        ninio pe4 = new ninio(4);
+        ninio pe5 = new ninio(5);
         Guardia gu1 = new Guardia(1);
+        Guardia gu2 = new Guardia(2);
+        
         
         for(int i = 0; i < 6; i++ ){
             x=Greenfoot.getRandomNumber(getWidth());  //getWidth()
@@ -58,6 +59,7 @@ public class Casa extends World
         
             if(i==1){    
                 addObject(pe1,x,115);   //creando en el piso 1
+                addObject(gu2,450,100);    //creando guardia en el piso 3
             }
             
             if(i==2){

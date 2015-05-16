@@ -13,6 +13,7 @@ public class Guardia extends persona
     private int tiempoAnimacion = 0;
     private int id;
     private boolean parate = false;
+    
     // ********** variables para el salto **********/
     private int velCaida = 0;
     private int aceleracion = 2;
@@ -29,8 +30,11 @@ public class Guardia extends persona
     
     public void act() 
     {
-        chekaPiso();
-        saltoAutomatico();
+        if(parate == false){
+            chekaPiso();
+            saltoAutomatico();
+        }
+        parado();
     }
     
     public void saltoAutomatico()
@@ -95,6 +99,19 @@ public class Guardia extends persona
         velCaida = velCaida - tamSalto;
         saltando = true;
         caida();
+    }
+    
+    public void parado()
+    {
+        Casper jug = (Casper)(getWorld().getObjects(Casper.class).get(0));        
+        boolean x = jug.ParaPersona();
+        if(x == false)
+        {
+            parate = false;
+        }else
+        {
+            parate = true;
+        }
     }
     
     

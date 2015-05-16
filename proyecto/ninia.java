@@ -40,10 +40,11 @@ public class ninia extends persona
                 speed=-speed;
             }
             setLocation(getX()+speed,getY());
+            animacionDerecha();
         }
-        animacionDerecha();
+        
         parado();
-        //Restricciones();
+
     }
    
     public void parado()
@@ -51,7 +52,6 @@ public class ninia extends persona
         Casper jug = (Casper)(getWorld().getObjects(Casper.class).get(0));        
         
         boolean x = jug.ParaPersona();
-        p=x;
         if(x == false)
         {
             parate = false;
@@ -79,8 +79,6 @@ public class ninia extends persona
         else if(frame == 3)
         {
             setImage(run3);
-            //frame=1;
-            //return;
         }
         else if(frame == 4)
         {
@@ -95,19 +93,6 @@ public class ninia extends persona
         avance = 0;
         }
         avance++;
-    }
-    
-    public void Restricciones()
-    {
-        if(getOneObjectAtOffset(Ancho()/2,0,BaseElevador.class) != null)
-        {
-            setLocation(getX()-5, getY());
-        }
-        
-        if(getOneObjectAtOffset(Ancho()/2,0,Elevador.class) != null)
-        {
-            setLocation(getX()-5, getY());
-        }
     }
     
     private int Alto()

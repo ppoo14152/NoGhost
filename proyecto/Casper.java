@@ -16,14 +16,23 @@ public class Casper extends Actor
     private boolean bandEntrada = false;
     private boolean bandPara;
     private int timer = 3000;
+    //********** VariablesPara crear y usar posion**********//
     private int timeCreaPosion = 0;
+    private int timeUsaPosion = 0;
+    //******************************************************//
     private int vida=100;
     private Texto txVida;
     private int pocimasRecolectadas=0;
     private Texto txPosima;
     private Texto tocandoBase;// 
     private boolean hola = false;
-    int dirQueEntre = 0;//
+    
+    //********** variables para el elevador **********//
+    private int dirQueEntre;                        // checando en la direccion que estoy 
+    private boolean tocandoElevador = false;
+    private int activado = 0;
+    int distancia = 0; 
+    //************************************************//
     
     public Casper()
     {
@@ -34,56 +43,95 @@ public class Casper extends Actor
     
     public void act() 
     {
-        if(!hola)
+        if(tocandoElevador == false)            //Solo si no toca el elevador se mueve hacia abajo/arriba
         {
-            Movimiento();
+            movAbajoArriba();
+        }
+        
+        if( activado == 0 ){
+            movDerIzq();
         }
         
         tocaPosima();
-        TocandoTuboYElevador();
-        //Tocandotubo();
+        Tocandotubo();
+        //TocandoTuboYElevador();
         PrendeObjeto();
         desocultarItem();
         danio();
         gana();
         MuestraVida();
         MuestraPosiones();
+        usaPosima();
+        
     }
     
     
     
-    /*public void Tocandotubo()
+    public void Tocandotubo()
     {
-        //boolean bandEntrada = false;
+        Actor baseElev = getOneIntersectingObject(BaseElevador.class);
         Elevador elev = (Elevador)(getWorld().getObjects(Elevador.class).get(0));
-        Actor elevador = getOneIntersectingObject(Elevador.class); //Checa si tocamos elevador
-        int elevParado = elev.Parado();
+        Actor elevador = getOneIntersectingObject(Elevador.class);
+        int parado = elev.Parado();
         
-        if( getOneIntersectingObject(BaseElevador.class) != null ){
-            if(bandEntrada == false ){              //Si la bandera es falsa no me dejara entrar
-                if(dirQueEntre == 2){       
-                        setLocation(getX()+speed,getY());
-                }
-            }
+       if(getX()<460){
+           dirQueEntre = 0 ;                        //Estoy del lado izquierdo
+       }
+       else{
+            dirQueEntre = 1;                        ////Estoy del lado derecho
+       }
+       
+       if(baseElev != null)
+       {
+           tocandoElevador = true;
+       }
+       else{
+           tocandoElevador = false;
+       }
+       
+       if(baseElev != null && bandEntrada == false){
+           
+           if(dirQueEntre == 1){
+               setLocation(getX()-speed,getY());
+           }
             
-        }
-        
-        if(elevParado == 1 && elevador != null)              // Si el elevador esta detenido y esta tocando al elevador
-        {
-            Movimiento();
-            bandEntrada = true;
-            if(direccion == 2 ){
-                dirQueEntre = 2;
-            }
-        }
-        else{
-            bandEntrada = false;
-        }
-    }*/
+           if(dirQueEntre == 0){
+              setLocation(getX()+speed,getY());
+           }
+       }
+       
+       if(parado == 1 && elevador != null)
+       {
+           bandEntrada = true;
+       }
+       else{
+           if(activado == 0)
+           bandEntrada = false;
+       }
+       
+       if(Greenfoot.isKeyDown("e")){
+           getWorld().setPaintOrder(BaseElevador.class, Elevador.class, Casper.class);
+           activado=1;
+           distancia = getY() - elev.getY();
+           bandEntrada= true;
+      
+       }
+           
+       if(Greenfoot.isKeyDown("s")){
+           activado=0;
+           getWorld().setPaintOrder(Casper.class, BaseElevador.class, Elevador.class);
+           //bandEntrada = false;
+       }
+       
+       if(activado==1){
+           
+                //if(parado==0){ 
+                    setLocation(getX(),elev.getY()+distancia);
+                //}
+       }
+    }
     
-    
-    
-    public void TocandoTuboYElevador()
+    /*public void TocandoTuboYElevador()
     {   
         Elevador elev = (Elevador)(getWorld().getObjects(Elevador.class).get(0)); 
         
@@ -110,7 +158,7 @@ public class Casper extends Actor
         {
             if(!hola)
             {
-                Movimiento();
+                //Movimiento();
             }
             bandEntrada = true;
         }
@@ -151,7 +199,7 @@ public class Casper extends Actor
             bandEntrada = false;
             hola = false;
         }
-    }
+    }*/
     
     
     public void tocaPosima() 
@@ -169,27 +217,40 @@ public class Casper extends Actor
     
     public boolean PrendeObjeto()
     {
-        boolean band = false;
+        boolean band = false;                       // Bandera para detectar si Prendio el objeto   
         if(isTouching(Muebles.class))
         {
             if(Greenfoot.isKeyDown("space"))
             {
-                band = true;
-                bandPara = true;
+                band = true;                        // Objeto prendido
             }
+            
         }else
         {
-            band = false;
+            band = false;                           // Objeto Apagado
         }
-        return band;
+        return band;                                //Retorna si el objeto esta Encendido/Apagado
     }
+    
+    public void usaPosima()
+    {
+        if(Greenfoot.isKeyDown("z"))
+            {
+                if(timeUsaPosion >= 1000 && pocimasRecolectadas > 0 ){
+                    bandPara = true;
+                    pocimasRecolectadas--;
+                    timeUsaPosion=0;
+                }
+            }
+        timeUsaPosion ++ ;
+    }
+    
     
     public void desocultarItem()
     {
         World mundo;
         mundo=getWorld();
         java.util.List lstMuebles = mundo.getObjects(Muebles.class);
-        Muebles objMueble = (Muebles)lstMuebles.get(7);
         
         if(isTouching(Muebles.class)){
             
@@ -197,14 +258,12 @@ public class Casper extends Actor
                 if(timeCreaPosion >= 100 ){
                    if(direccion==1){
                        
-                       //if(objMueble.setobjInteractivo()==true)
                             getWorld().addObject(new posion(),getX()+50,getY());
                             
                    }    
                    
                    if(direccion == 2){
                        
-                       //if(objMueble.setobjInteractivo()==true)
                             getWorld().addObject(new posion(),getX()-50,getY());
                             
                    }
@@ -307,10 +366,9 @@ public class Casper extends Actor
         getWorld().addObject(txPosima,93,25);
     }
     
-    public void Movimiento()
+    public void movDerIzq()
     {
-        
-        if(Greenfoot.isKeyDown("right"))
+         if(Greenfoot.isKeyDown("right"))
         {
             direccion = 1;                                  //1 Derecha
             this.setLocation(this.getX()+speed,this.getY());
@@ -325,7 +383,10 @@ public class Casper extends Actor
             setImage(gasperIzq);
             LimitesParedPiso();
         }
-        
+    }
+    
+    public void movAbajoArriba()
+    {
         if(Greenfoot.isKeyDown("up"))
         {
             direccion = 3;                                  //3 Arriba

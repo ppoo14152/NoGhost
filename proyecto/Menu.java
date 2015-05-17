@@ -11,19 +11,24 @@ public class Menu extends World
     private Actor ayuda;
     private Actor jugar;
     private Actor credito;
+    private Actor record;
+    
     
     public Menu()
     {    
         super(920, 530, 1); //Tamaño del fondo
         
-        ayuda = new botones(2);
-        addObject(ayuda, 230, 450);
-        
-        jugar = new botones(1);
+        jugar = new botones(1);//se crea boton jugar
         addObject(jugar, 100, 450);
         
-        credito = new botones(4);
-        addObject(credito, 360, 450);
+        ayuda = new botones(2);//se crea boton de ayuda
+        addObject(ayuda, 260, 450);
+                
+        credito = new botones(4);//se crea boton de creditos
+        addObject(credito, 420, 450);
+        
+        record = new botones(5);//se crea boton de records
+        addObject(record, 580, 450);
         
         setPaintOrder(botones.class);
         

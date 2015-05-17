@@ -311,15 +311,15 @@ public class Casper extends Actor
         int op1 = objetivo1.habilitado();
         int op2 = objetivo2.habilitado();
         
-        if (isTouching(Objetivo.class) && op == 1 && itemRecolectados == 10)//pasar de primer nivel a segundo nivel
+        if (isTouching(Objetivo.class) && op == 1 && itemRecolectados >= 10)//pasar de primer nivel a segundo nivel
         {
             Greenfoot.setWorld(new Casa2());
         }
-        if (isTouching(Objetivo2.class) && op1 == 1 && itemRecolectados == 15)//pasar de segundo nivel a tercer nivel
+        if (isTouching(Objetivo2.class) && op1 == 1 && itemRecolectados >= 15)//pasar de segundo nivel a tercer nivel
         { 
             Greenfoot.setWorld(new Casa3()); 
         }
-        if (isTouching(Objetivo3.class) && op2 == 1 && itemRecolectados == 25)//pasar de tercer nivel a ganar
+        if (isTouching(Objetivo3.class) && op2 == 1 && itemRecolectados >= 25)//pasar de tercer nivel a ganar
         { 
             Greenfoot.setWorld(new Menu()); 
         }

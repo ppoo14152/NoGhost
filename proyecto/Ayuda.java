@@ -15,7 +15,7 @@ public class Ayuda extends World
         super(920, 530, 1); 
         
         Regresar = new botones(3);
-        addObject(Regresar, 850, 450);
+        addObject(Regresar, 820, 450);
         
         prepare();
     }
@@ -34,7 +34,7 @@ public class Ayuda extends World
     
     public void prepare()
     {
-        CasperAyuda jug = new CasperAyuda(690, 200);
-        addObject(jug, 690, 200);
+        CasperAyuda jug = new CasperAyuda(720, 235);
+        addObject(jug, 720, 235);
     }
 }

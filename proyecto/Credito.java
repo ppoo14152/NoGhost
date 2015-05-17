@@ -15,7 +15,7 @@ public class Credito extends World
         super(920, 530, 1);
         
         Regresar = new botones(3);
-        addObject(Regresar, 850, 450);
+        addObject(Regresar, 820, 450);
     }
       public void act()
     {

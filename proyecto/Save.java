@@ -14,6 +14,9 @@ public class Save
      */
     public Save()
     {
+        if ((UserInfo.isStorageAvailable()) && (UserInfo.getMyInfo() != null)) {
+          this.player = UserInfo.getMyInfo();
+        }
     }
 
     /**
@@ -22,9 +25,20 @@ public class Save
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void saveHighscore(int score)
+  {
+      if ((UserInfo.isStorageAvailable()) && (this.player != null) && ((score > this.player.getScore()) || (this.player.getInt(0) == 0)))
+      {
+          this.player.setScore(score);
+          this.player.setInt(0, 1);
+          this.player.store();
+        }
+        
+      if ((UserInfo.isStorageAvailable()) && (this.player != null) && (score > this.player.getScore()))
+      {
+          this.player.setScore(score);
+          this.player.setInt(0, 1);
+          this.player.store();
+      }
     }
 }

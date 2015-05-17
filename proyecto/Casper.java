@@ -24,12 +24,11 @@ public class Casper extends Actor
     private Texto txItem;
     private int pocimasRecolectadas = 0;
     private int itemRecolectados = 0;
-    //********** variables para el elevador **********//
-    private int dirQueEntre;                        // checando en la direccion que estoy 
+    /////////////////// variables para el elevador /////////////////////
+    private int dirQueEntre;  // checando en la direccion que estoy 
     private boolean tocandoElevador = false;
     private int activado = 0;
     int distancia = 0; 
-    //************************************************//
     
     public Casper()
     {
@@ -165,7 +164,7 @@ public class Casper extends Actor
         boolean band = false;                       // Bandera para detectar si Prendio el objeto   
         if(isTouching(Muebles.class))
         {
-            if(Greenfoot.isKeyDown("space"))
+            if(Greenfoot.isKeyDown("d"))
             {
                 band = true;                        // Objeto prendido
             }
@@ -255,9 +254,11 @@ public class Casper extends Actor
         World miMundo = getWorld();
         Objetivo objetivo = (Objetivo)(getWorld().getObjects(Objetivo.class).get(0));  
         Objetivo2 objetivo1 = (Objetivo2)(getWorld().getObjects(Objetivo2.class).get(0));
+        Objetivo3 objetivo2 = (Objetivo3)(getWorld().getObjects(Objetivo3.class).get(0));
         
         int op = objetivo.habilitado();
         int op1 = objetivo1.habilitado();
+        int op2 = objetivo2.habilitado();
         
         if(op == 1)
         {
@@ -272,6 +273,16 @@ public class Casper extends Actor
         if(op1 == 1)
         {
             Casa2 casa = (Casa2)miMundo;
+            BarraPresencial vidaBarra = casa.getVidaBarra();
+            if(isTouching(persona.class) && bandPara == false)
+            {
+                vida--;
+                vidaBarra.detectaPresencia();
+            }
+        }
+        if(op2 == 1)
+        {
+            Casa3 casa = (Casa3)miMundo;
             BarraPresencial vidaBarra = casa.getVidaBarra();
             if(isTouching(persona.class) && bandPara == false)
             {
@@ -294,18 +305,25 @@ public class Casper extends Actor
     { 
         Objetivo objetivo = (Objetivo)(getWorld().getObjects(Objetivo.class).get(0));  
         Objetivo2 objetivo1 = (Objetivo2)(getWorld().getObjects(Objetivo2.class).get(0));
+        Objetivo3 objetivo2 = (Objetivo3)(getWorld().getObjects(Objetivo3.class).get(0));
         
         int op = objetivo.habilitado();
         int op1 = objetivo1.habilitado();
+        int op2 = objetivo2.habilitado();
         
-        if (isTouching(Objetivo.class) && op == 1)
+        if (isTouching(Objetivo.class) && op == 1 && itemRecolectados == 10)//pasar de primer nivel a segundo nivel
         {
             Greenfoot.setWorld(new Casa2());
         }
-        if (isTouching(Objetivo2.class) && op1 == 1)
+        if (isTouching(Objetivo2.class) && op1 == 1 && itemRecolectados == 15)//pasar de segundo nivel a tercer nivel
+        { 
+            Greenfoot.setWorld(new Casa3()); 
+        }
+        if (isTouching(Objetivo3.class) && op2 == 1 && itemRecolectados == 25)//pasar de tercer nivel a ganar
         { 
             Greenfoot.setWorld(new Menu()); 
         }
+
     }
     
     public void MuestraVida()

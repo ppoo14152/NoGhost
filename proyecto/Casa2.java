@@ -20,7 +20,7 @@ public class Casa2 extends World
         getBackground().setColor(Color.BLACK);  //Establece el fondo color negro
         getBackground().fill();                 //Pone el fondo establecido
         prepare();
-        creaPersonas(10);
+        creaPeople();;
     }
     
     public  BarraPresencial getVidaBarra()
@@ -34,6 +34,66 @@ public class Casa2 extends World
         addObject(vidaBarra,780,25);
     }
     
+    public void creaPeople()
+    {
+        int x;
+        ninio pe1 = new ninio(1);
+        ninio pe2 = new ninio(2);
+        ninio pe3 = new ninio(3);
+        ninio pe4 = new ninio(4);
+        ninio pe5 = new ninio(5);
+        ninio pe6 = new ninio(6);
+        
+        Guardia gu1 = new Guardia(1);
+        Guardia gu2 = new Guardia(2);
+        Guardia gu3 = new Guardia(3);
+        adulto ad1 = new adulto(1);
+        adulto ad2 = new adulto(2);
+        adulto ad3 = new adulto(3);
+        
+        
+        for(int i = 0; i < 7; i++ ){
+            x=Greenfoot.getRandomNumber(getWidth());  //getWidth()
+            if(x<=120){
+               x=x+120;
+            }
+            
+            if(x>=getWidth()-150){
+               x=x-150;
+            }
+        
+            if(i==1){    
+                addObject(pe1,x,115);      //creando en el piso 1
+                addObject(gu3,300,238);    //creando guardia en el piso 2
+                addObject(gu2,450,100);    //creando guardia en el piso 3
+            }
+            
+            if(i==2){
+                addObject(pe2,x,238);   //creando en el piso 2
+                addObject(ad2,x,355);   //creando adulto en el piso 1
+                
+            }
+            
+            if(i==3){
+                addObject(pe3,x,238);   //creando en el piso 2
+                addObject(ad3,x,480);   //creando adulto en el piso 0
+                
+            }
+            
+            if(i==4){
+               addObject(pe4,x,355);    //creando en el piso 3
+               addObject(gu1,450,355);  //creando guardia en el piso 3
+            }
+            
+            if(i==5){
+                addObject(pe5,x,480);   //creando en el piso 4
+            }
+            if(i==6){
+                addObject(pe6,x,480);   //creando en el piso 1
+            }
+            
+       }
+    }
     public void creaPersonas(int numero){
         for(int i=0;i<numero;i++){
             persona p=new ninio(i);
@@ -221,6 +281,8 @@ public class Casa2 extends World
         Puerta p1 = new Puerta();
         addObject(p1, 790, 85);
         
+        Objetivo3 obj2 = new Objetivo3(0);
+        addObject(obj2, 805, 447);
         Objetivo obj1 = new Objetivo(0);
         addObject(obj1, 805, 447);
         Objetivo2 obj = new Objetivo2(1);

@@ -14,6 +14,7 @@ public class Casa2 extends World
      * 
      */
     BarraPresencial vidaBarra = new BarraPresencial();
+    
     public Casa2()
     {    
         super(920, 530, 1);                     //Resolucion
@@ -31,12 +32,13 @@ public class Casa2 extends World
     public void prepare()
     {
         Imagenes();
-        addObject(vidaBarra,780,25);
+        addObject(vidaBarra,780,25);//Ubicacion de la barra de vida
     }
     
     public void creaPeople()
     {
         int x;
+        /////////////////////personas de el escenario/////////////////////////
         ninio pe1 = new ninio(1);
         ninio pe2 = new ninio(2);
         ninio pe3 = new ninio(3);

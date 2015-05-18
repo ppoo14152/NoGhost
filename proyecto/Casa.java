@@ -17,7 +17,7 @@ public class Casa extends World
     public Casa()
     {    
         super(920, 530, 1); //Resolucion//
-        getBackground().setColor(Color.BLACK);
+        getBackground().setColor(Color.BLACK);//fondo
         getBackground().fill();
         prepare();
         creaPeople();

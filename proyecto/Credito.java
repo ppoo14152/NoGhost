@@ -12,9 +12,9 @@ public class Credito extends World
     
     public Credito()
     {    
-        super(920, 530, 1);
+        super(920, 530, 1); //Resolucion de escenario
         
-        Regresar = new botones(3);
+        Regresar = new botones(3);//Se crea boton de regresar
         addObject(Regresar, 820, 450);
     }
       public void act()
@@ -23,7 +23,7 @@ public class Credito extends World
         {
             if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == Regresar)
             {
-                Greenfoot.setWorld(new Menu());
+                Greenfoot.setWorld(new Menu());//Al presionar boton regresa a menu principal
                 
             }
         }

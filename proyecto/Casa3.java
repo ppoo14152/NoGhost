@@ -31,11 +31,12 @@ public class Casa3 extends World
     public void prepare()
     {
         Imagenes();
-        addObject(vidaBarra,780,25);
+        addObject(vidaBarra,780,25);//ubicaciond e la barra de vida
     }
     public void creaPeople()
     {
         int x;
+        /////////////////personajes de el escenario////////////////////////////
         ninio pe1 = new ninio(1);
         ninio pe2 = new ninio(2);
         ninio pe3 = new ninio(3);
@@ -285,15 +286,16 @@ public class Casa3 extends World
         addObject(m31, 290,330);
         //Muebles m32 = new Muebles(30);//  flores rosas morado
         //addObject(m32, 320,445);
+        
         /////////Puerta///////////////////
         Puerta p1 = new Puerta();
         addObject(p1, 790, 85);
         
-        Objetivo obj1 = new Objetivo(0);
+        Objetivo obj1 = new Objetivo(0);//puerta primer nivel   Objetivo uno
         addObject(obj1, 805, 447);
-        Objetivo2 obj = new Objetivo2(0);
+        Objetivo2 obj = new Objetivo2(0);//puerta segundo nivel  Objetivo dos
         addObject(obj, 805, 447);
-        Objetivo3 obj2 = new Objetivo3(1);
+        Objetivo3 obj2 = new Objetivo3(1);//puerta tercer nivel  Objetivo tres
         addObject(obj2, 805, 447);
         
         /////////Elevador/////////////////
@@ -311,6 +313,7 @@ public class Casa3 extends World
         addObject(el3, 800, 207);
         BaseElevador be3 = new BaseElevador(2);
         addObject( be3, 800, 267);
+        
         /////////Gasper//////////////////
         Casper jugador = new Casper();
         addObject(jugador,750,80);

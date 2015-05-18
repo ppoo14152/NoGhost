@@ -8,10 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Menu extends World
 {   
-    private Actor ayuda;
-    private Actor jugar;
-    private Actor credito;
-    private Actor record;
+    private Actor ayuda;//creando actor de boton ayuda
+    private Actor jugar;//creando actor de boton jugar
+    private Actor credito;//creando actor de boton credito
+    private Actor record;//creando actor de boton record
     
     
     public Menu()
@@ -41,16 +41,21 @@ public class Menu extends World
         {
             if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == ayuda)
             {
-                Greenfoot.setWorld(new Ayuda());
+                Greenfoot.setWorld(new Ayuda());//manda al escenario de ayuda
             }
             if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == jugar)
             {
-                Greenfoot.setWorld(new Casa());
+                Greenfoot.setWorld(new Casa());//manda al escenario de casa
             }
              if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == credito)
             {
-                Greenfoot.setWorld(new Credito());
+                Greenfoot.setWorld(new Credito());//manda al escenario de credito
             }
+            if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == record)
+            {
+                Greenfoot.setWorld(new Records());//manda al escenario de records
+            }
+            
         }
     }
     
@@ -60,20 +65,20 @@ public class Menu extends World
         Menu2 m2 = new Menu2(); //Nombro al objeto de la clase menu2 como m2
         addObject(m2, 450, 265); //Adhiero el objeto al proyecto
         
-        TiosMenu tM1 = new TiosMenu(1);
+        TiosMenu tM1 = new TiosMenu(1);//creo a tio numero uno
         addObject(tM1, 860, 270);
         
-        TiosMenu tM3 = new TiosMenu(3);
+        TiosMenu tM3 = new TiosMenu(3);//creo a tio numero dos
         addObject(tM3, 740, 240);
         
-        TiosMenu tM2 = new TiosMenu(2);
+        TiosMenu tM2 = new TiosMenu(2);//creo a tio numero tres
         addObject(tM2, 800, 400);
         
-        TiosMenu tM4 = new TiosMenu(4);
+        TiosMenu tM4 = new TiosMenu(4);//creo a tio numero cuatro
         addObject(tM4, 180, 80);
          
         
-        CasperMenu cM = new CasperMenu(620, 200, 1);
+        CasperMenu cM = new CasperMenu(620, 200, 1);//se agrega y se le da el movimiento a el protagonista
         addObject(cM, 620, 200);
     }
 }

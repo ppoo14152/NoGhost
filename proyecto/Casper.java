@@ -7,6 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Casper extends Actor
 {
+    private Save jugador=new Save();
     private GreenfootImage gasperIzq= new GreenfootImage("CasperJuego.png");
     private GreenfootImage gasperDer= new GreenfootImage("CasperJuegoder.png");
     public int direccion;
@@ -297,7 +298,8 @@ public class Casper extends Actor
         
         if(vida == 0)
         {
-            Greenfoot.setWorld(new Menu()); 
+            jugador.saveHighscore(itemRecolectados);
+            Greenfoot.setWorld(new Fin(1)); 
         }
     }
     
@@ -321,7 +323,7 @@ public class Casper extends Actor
         }
         if (isTouching(Objetivo3.class) && op2 == 1 && itemRecolectados >= 25)//pasar de tercer nivel a ganar
         { 
-            Greenfoot.setWorld(new Menu()); 
+            Greenfoot.setWorld(new Fin(0)); 
         }
 
     }
@@ -329,7 +331,7 @@ public class Casper extends Actor
     public void MuestraVida()
     {
         txVida.Despliega("",30);
-        getWorld().addObject(txVida,700,25);
+        getWorld().addObject(txVida,710,25);
     }
     
     public void MuestraPosiones()

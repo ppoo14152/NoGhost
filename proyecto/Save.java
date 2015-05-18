@@ -1,3 +1,5 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.UserInfo;
 /**
  * Write a description of class Save here.
  * 
@@ -7,7 +9,7 @@
 public class Save  
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private UserInfo player;
 
     /**
      * Constructor for objects of class Save

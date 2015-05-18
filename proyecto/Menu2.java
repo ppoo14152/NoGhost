@@ -28,8 +28,8 @@ public class Menu2 extends Actor
         imagen1 = new GreenfootImage("1.jpg");
         imagen2 = new GreenfootImage("3.jpg");
         
-        //musica.setVolume(50);
-        //setImage(imagen1);
+        musica.setVolume(50);
+        setImage(imagen1);
     }
     
     public void act() 
@@ -53,7 +53,7 @@ public class Menu2 extends Actor
             setImage(imagen1);
             indice--;
             aux = 20;
-            //musica.play();
+            musica.play();
         }
         if(band)
         {

@@ -1,8 +1,11 @@
 #BlueJ class context
 comment0.params=cad
 comment0.target=TextoVidas(java.lang.String)
+comment0.text=\r\n\ Cosntructor\ de\ la\ clase\r\n
 comment1.params=cadena
 comment1.target=void\ Despliega(java.lang.String)
+comment1.text=\r\n\ Despliega\ la\ cadena\ de\ vidas\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Metodo\ actua\ que\ se\ ejecuta\ siempre\r\n
 numComments=3

@@ -1,7 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Puerta()
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Puerta\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ puerta\ \r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ No\ contiene\ ningun\ actua\ solo\ esta\ estatica\r\n
 numComments=2

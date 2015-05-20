@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.params=n
 comment0.target=ninia(int)
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ ninio\ cada\ que\ es\ llamada\ solo\ inicializa\ las\ variables.\r\n\ @param\ n\ es\ un\ numero\ con\ el\ que\ se\ reconocera\ al\ actor\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ Mantiene\ al\ jugador\ Activo\ es\ decir\ moviendose\ sobre\ el\ escenario\r\n\ mientras\ no\ se\ tenga\ la\ variable\ parate\ en\ true\r\n
 comment2.params=
 comment2.target=void\ parado()
+comment2.text=\r\n\ Esta\ Clase\ hace\ que\ el\ jugador\ cambie\ su\ estado\ de\ interaccion,\ falso\ para\ caminar\ y\ true\ para\ \r\n\ que\ se\ pare\r\n
 comment3.params=
 comment3.target=void\ animacionDerecha()
-comment4.params=
-comment4.target=int\ Alto()
-comment5.params=
-comment5.target=int\ Ancho()
-numComments=6
+comment3.text=\r\n\ Solo\ muestra\ la\ animacion\ derecha\ al\ estar\ actuando\ en\ el\ escenario\r\n
+numComments=4

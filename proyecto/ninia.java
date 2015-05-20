@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class ninia here.
+ * Crea a una ninia que va corriendo en el escenario
  * 
  * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
- * @version (a version number or a date)
+ * @version (1.0)
  */
 public class ninia extends persona
 {
@@ -20,13 +20,21 @@ public class ninia extends persona
     private boolean parate = false;
     private boolean p;
     
-    
+    /**
+     * Constructor de la clase ninio cada que es llamada solo inicializa las variables.
+     * @param n es un numero con el que se reconocera al actor
+     */
     public ninia(int n)
     {
         setImage("girl.png");
         id = n;
     }
     
+    
+     /**
+     * Mantiene al jugador Activo es decir moviendose sobre el escenario
+     * mientras no se tenga la variable parate en true
+     */
     public void act() 
     {
         World m=getWorld();
@@ -47,6 +55,11 @@ public class ninia extends persona
 
     }
    
+    
+    /**
+     * Esta Clase hace que el jugador cambie su estado de interaccion, falso para caminar y true para 
+     * que se pare
+     */
     public void parado()
     {
         Casper jug = (Casper)(getWorld().getObjects(Casper.class).get(0));        
@@ -62,6 +75,9 @@ public class ninia extends persona
         
     }
     
+    /**
+     * Solo muestra la animacion derecha al estar actuando en el escenario
+     */
     public void animacionDerecha()
     {
         if(frame == 1)
@@ -94,14 +110,4 @@ public class ninia extends persona
         }
         avance++;
     }
-    
-    private int Alto()
-    {
-        return getImage().getHeight();
-    }
-    
-    public int Ancho()
-    {
-        return getImage().getWidth();
-    }  
 }

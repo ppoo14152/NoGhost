@@ -1,16 +1,15 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Elevadores here.
+ * Clase elevadores
  * 
  * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
- * @version (a version number or a date)
+ * @version (15 Mayo 2015)
  */
 public class Elevadores extends Actor
 {
     /**
-     * Act - do whatever the Elevadores wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * No contiene actua solo son objetos estaticos.
      */
     public void act() 
     {

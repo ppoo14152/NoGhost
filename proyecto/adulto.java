@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * La clase muestra a un Actor que es un ninio que se esta paseando por el escenario.
+ * La clase muestra a un Actor que es un adulto que se esta paseando por el escenario brincando y corriendo
  * 
  * @author Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano.
  * @version 15 Mayo 2015.
@@ -58,7 +58,7 @@ public class adulto extends persona
         World m=getWorld();
         if (parate==false)
         {
-            if(getX()>=m.getWidth()-160||getX()<=120){
+            if(getX()>=m.getWidth()-170||getX()<=120){
                 run1.mirrorHorizontally();
                 run2.mirrorHorizontally();
                 run3.mirrorHorizontally();

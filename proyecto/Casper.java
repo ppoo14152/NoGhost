@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
- * Write a description of class Casper here.
+ * Crea el jugador principal que es un fantasma
  * 
  * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
- * @version (a version number or a date)
+ * @version (1.0)
  */
 public class Casper extends Actor
 {
@@ -31,6 +31,9 @@ public class Casper extends Actor
     private int activado = 0;
     int distancia = 0; 
     
+    /**
+     * Constructor de la clase casper que inicializa las vidas,posiones y items.
+     */
     public Casper()
     {
         //sVida = Integer.toString(vida);
@@ -39,6 +42,9 @@ public class Casper extends Actor
         txItem = new Texto("Items:");
     }
     
+    /**
+     * Clase para activar todas las funciones de casper
+     */
     public void act() 
     {
         if(tocandoElevador == false)            //Solo si no toca el elevador se mueve hacia abajo/arriba
@@ -65,7 +71,10 @@ public class Casper extends Actor
     }
     
     
-    
+    /**
+     * Esta clase cambia la variable tocandoElevador si lo toca e indica en que direccion del mapa estas
+     * ademas es el encargado de que entres o salgas del elevador
+     */
     public void Tocandotubo()
     {
         Actor baseElev = getOneIntersectingObject(BaseElevador.class);
@@ -134,6 +143,9 @@ public class Casper extends Actor
         }
     }
 
+    /**
+     * Aumenta las posimas recolectadas +1
+     */
     public void tocaPosima() 
     {
         Actor botella;
@@ -147,6 +159,9 @@ public class Casper extends Actor
         
     }
     
+    /**
+     * aumenta los items recolectados +1
+     */
     public void tocaItem() 
     {
         Actor unItem;
@@ -160,6 +175,10 @@ public class Casper extends Actor
         
     }
     
+    /**
+     * Al presionar la tecla "d" y tocando mueble
+     * @return band que es si encendera el mueble o no.
+     */
     public boolean PrendeObjeto()
     {
         boolean band = false;                       // Bandera para detectar si Prendio el objeto   
@@ -177,6 +196,10 @@ public class Casper extends Actor
         return band;                                //Retorna si el objeto esta Encendido/Apagado
     }
     
+    /**
+     * Se usa la posima con la tecla "z" redice posimas -1
+     * y asi detendra a las personas en el escenario
+     */
     public void usaPosima()
     {
         if(Greenfoot.isKeyDown("z"))
@@ -190,7 +213,9 @@ public class Casper extends Actor
         timeUsaPosion ++ ;
     }
     
-    
+    /**
+     * Al tocar mueble y presionar tecla "d" desoculta un item o posion 
+     */
     public void desocultarItem()
     {
         World mundo;
@@ -229,27 +254,34 @@ public class Casper extends Actor
         timeCreaPosion++;
     }
     
+    /**
+     * Clase para parar a una persona 
+     * @return stop para pararla durante un tiempo
+     */
     public boolean ParaPersona()
     {
-        boolean oli = false;
+        boolean stop = false;
         if(bandPara)
         {
             if(timer != 0)
             {
                 timer--;
-                oli = true;
+                stop = true;
             }
             if(timer == 0)
             {
                 timer = 3000;
-                oli = false;
+                stop = false;
                 bandPara = false;
             }
         }
         //System.out.println(timer);
-        return oli;
+        return stop;
     }
     
+    /**
+     * Detecta todo el daño hecho al jugador resta vida si lo tocan los personajes del mundo
+     */
     public void danio()
     {
         World miMundo = getWorld();
@@ -303,6 +335,9 @@ public class Casper extends Actor
         }
     }
     
+    /**
+     * Cambia de niveles cada vez que logra los objetivos planteados
+     */
     public void gana()
     { 
         Objetivo objetivo = (Objetivo)(getWorld().getObjects(Objetivo.class).get(0));  
@@ -328,24 +363,36 @@ public class Casper extends Actor
 
     }
     
+    /**
+     * Clase utilizada solo para mostrar la vida en el mundo
+     */
     public void MuestraVida()
     {
         txVida.Despliega("",30);
         getWorld().addObject(txVida,710,25);
     }
     
+    /**
+     * Clase utilizada solo para mostrar las posiones en el mundo.
+     */
     public void MuestraPosiones()
     {
         txPosima.Despliega(""+pocimasRecolectadas,16);
         getWorld().addObject(txPosima,93,25);
     }
     
+    /**
+     * Clase utilizada solo para mostrar los items en el mundo.
+     */
     public void MuestraItems()
     {
         txItem.Despliega(""+itemRecolectados,16);
         getWorld().addObject(txItem,203,25);
     }
     
+    /**
+     * Clase que solo mueve al actor en direccion izquierda y derecha
+     */
     public void movDerIzq()
     {
          if(Greenfoot.isKeyDown("right"))
@@ -365,6 +412,9 @@ public class Casper extends Actor
         }
     }
     
+    /**
+     * Clase que solo mueve al actor en direccion arriba y abajo.
+     */
     public void movAbajoArriba()
     {
         if(Greenfoot.isKeyDown("up"))
@@ -382,6 +432,9 @@ public class Casper extends Actor
         }   
     }
     
+    /**
+     * Crea las restricciones para que le sea imposible atravesar paredes y piso dependiendo de su direccion
+     */
     public void LimitesParedPiso()
     {
         if((getOneIntersectingObject(Pared.class) != null) || (getOneIntersectingObject(Pisos.class) != null )){
@@ -401,11 +454,17 @@ public class Casper extends Actor
         }
     }
     
+    /**
+     * @return alto de la imagen
+     */
      private int Alto()
     {
         return getImage().getHeight();
     }
     
+    /**
+     * @return ancho de la imagen
+     */
     public int Ancho()
     {
         return getImage().getWidth();

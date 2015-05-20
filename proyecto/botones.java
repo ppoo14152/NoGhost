@@ -1,15 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class botones here.
+ * Crea los botones , ya sea ayuda,menu,juego etc...
  * 
  * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
- * @version (a version number or a date)
+ * @version (1.0)
  */
 public class botones extends Actor
 {
     private GreenfootImage imagen;
     
+    /**
+     * Cosntructor de los botones
+     * @param b que define que boton se desea utilizar.
+     */
     public botones(int b)
     {
         if(b==1)
@@ -35,6 +39,9 @@ public class botones extends Actor
         }
         setImage(imagen);
     }
+    /**
+     * Clase actua que muestra la imagen que se eligio al ser creada
+     */
     public void act() 
     {
         setImage(imagen);

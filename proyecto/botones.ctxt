@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=b
 comment0.target=botones(int)
+comment0.text=\r\n\ Cosntructor\ de\ los\ botones\r\n\ @param\ b\ que\ define\ que\ boton\ se\ desea\ utilizar.\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ Clase\ actua\ que\ muestra\ la\ imagen\ que\ se\ eligio\ al\ ser\ creada\r\n
 numComments=2

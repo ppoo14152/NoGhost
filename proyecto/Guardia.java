@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class ninio here.
+ * Crea un guardia en el escenario que solo salta 
  * 
  * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
- * @version (a version number or a date)
+ * @version (1.0)
  */
 public class Guardia extends persona
 {
@@ -21,13 +21,19 @@ public class Guardia extends persona
     private int tamSalto = 15;
     private int tiempoSalto;
     //************************************************
-    
+    /**
+     * Constructor de la clase guardia cada que es llamada para inicializar las variables.
+     * @param n es un id con el que se reconocera al actor.
+     */
     public Guardia(int n)
     {
         setImage("guardia.png");
         id = n;
     }
     
+    /**
+     * Clase donde el guardia salta y actua solo
+     */
     public void act() 
     {
         if(parate == false){
@@ -37,6 +43,9 @@ public class Guardia extends persona
         parado();
     }
     
+    /**
+     * Clase para activar el salto automatico cada cierto tiempo y si esta en el suelo.
+     */
     public void saltoAutomatico()
     {
         if( tiempoSalto == 150 && saltando == false)
@@ -47,6 +56,9 @@ public class Guardia extends persona
         tiempoSalto++;
     }
     
+    /**
+     * Clase para la caida cambia cada que se ejecuta cambia la variable saltando en true.
+     */
     private void caida()
     {
             setLocation(getX(),getY()+velCaida);
@@ -57,6 +69,11 @@ public class Guardia extends persona
             saltando = true;
     }
     
+     /**
+     * Retorna si el actor esta tocando el suelo o saltando
+     * @return true cuando el actor esta en el suelo
+     * @return false cuando el actor esta saltando
+     */
     public boolean enPiso()
     {
         int miraPiso = (int) (altoImagen()/2)+1;
@@ -74,7 +91,9 @@ public class Guardia extends persona
         
     }
     
-    
+     /**
+     * Mueve a tierra al personaje, lo deja fijo en el piso.
+     */
     public void moveraTierra(Actor piso)
     {
         int pisoAltura = piso.getImage().getHeight();
@@ -83,6 +102,10 @@ public class Guardia extends persona
         saltando = false;
     }
     
+    /**
+     * checa si el actor ha llegado al piso, si no esta en el piso efectua la caida
+     * si esta en el piso  la velocidad de caida vuelve a 0.
+     */
     public void chekaPiso()
     {
         if(enPiso())
@@ -94,6 +117,9 @@ public class Guardia extends persona
         }
     }
     
+     /**
+     * Efectua la simulacion de saltado , cambia la variable saltando a true.
+     */
     public void saltar()
     {
         velCaida = velCaida - tamSalto;
@@ -101,6 +127,10 @@ public class Guardia extends persona
         caida();
     }
     
+    /**
+     * Esta Clase hace que el jugador cambie su estado de interaccion, falso para caminar y true para 
+     * que se pare.
+     */
     public void parado()
     {
         Casper jug = (Casper)(getWorld().getObjects(Casper.class).get(0));        
@@ -114,12 +144,19 @@ public class Guardia extends persona
         }
     }
     
-    
+    /**
+     * retorna el alto de la imagen
+     * @return alto
+     */
     public int altoImagen()
     {
         return getImage().getHeight();
     }
     
+    /**
+     * retorna el ancho de la imagen
+     * @return ancho
+     */
     public int anchoImagen()
     {
         return getImage().getWidth();

@@ -3,7 +3,7 @@ import java.awt.Color;
 /**
  * Esta clase crea una Barra para que esta se modifique conforme la requiera el usuario
  * 
- * @author Cristobal Zavala Cano
+ * @author Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano
  * @version (15 Mayo 2015)
  */
 public class BarraPresencial extends Actor

@@ -3,7 +3,7 @@ import java.util.*;
 /**
  * Write a description of class Objetivo2 here.
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class Objetivo3 extends Estaticos

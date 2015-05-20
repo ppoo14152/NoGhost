@@ -3,16 +3,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Clase para mostrar cualquier texto en la pantalla que se pueda agregar al mundo
  * 
- * @author Cristobal Zavala Cano
+ * @author Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano
  * @version 15 Mayo 2015
  */
 public class Texto extends Actor
 {
     private GreenfootImage texto;
     
-    public int posX;
-    public int posY;
-    public String cadena1;
+    private int posX;
+    private int posY;
+    private String cadena1;
     
     /**
     * Constructor de la clase Texto solo recibe la cadena para inicializar su variable

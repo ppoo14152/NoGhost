@@ -3,18 +3,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class CasperMenu here.
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class CasperMenu extends Actor
 {
-    public GreenfootImage imagen;
-    public int z = 200;
-    public int z2 = 200;
-    public int a;
-    public int sube;
-    public int aux = 0;
-    public boolean band = false;
+    private GreenfootImage imagen;
+    private int z = 200;
+    private int z2 = 200;
+    private int a;
+    private int sube;
+    private int aux = 0;
+    private boolean band = false;
     
     public CasperMenu(int x, int y, int tipo)
     {

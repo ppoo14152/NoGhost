@@ -1,15 +1,18 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Credito here.
+ * Aqui es donde mostramos los creditos de nuestro proyecto.
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class Credito extends World
 {
     private Actor Regresar;
-    
+    /**
+     * Constructor para objetos de clase Credito.
+     * 
+     */
     public Credito()
     {    
         super(920, 530, 1); //Resolucion de escenario

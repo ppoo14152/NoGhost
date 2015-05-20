@@ -1,9 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
 /**
- * Write a description of class Casa here.
- * 
- * @author (your name) 
+ * Este es el escenario del primer nivel, ademas de mostrar a las personas que debes evitar.
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class Casa extends World
@@ -34,7 +33,9 @@ public class Casa extends World
         addObject(vidaBarra,780,25);
     }
     
-    
+    /**
+     * Creacion de personajes para el escenario
+     */
     public void creaPeople()
     {
         int x;
@@ -111,7 +112,9 @@ public class Casa extends World
             addObject(p,x,y);
         }
     }
-    
+    /**
+     * Crea el escenario, muebles, elevadores y jugador.
+     */
     public void Imagenes()
     { 
         //////////////Techo/////////////////

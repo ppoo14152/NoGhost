@@ -1,9 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color; // Clase para importar color
 /**
- * Write a description of class Casa2 here.
- * 
- * @author (your name) 
+ * Este es el escenario del segundo nivel, ademas de mostrar a las personas que debes evitar.
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class Casa2 extends World
@@ -28,7 +27,10 @@ public class Casa2 extends World
     {
         return vidaBarra;
     }
-    
+    /**
+     * Prepare the world for the start of the program. That is: create the initial
+     * objects and add them to the world.
+     */
     public void prepare()
     {
         Imagenes();
@@ -124,7 +126,9 @@ public class Casa2 extends World
             addObject(p,x,y);
         }
     }
-    
+    /**
+     * Crea el escenario, muebles, elevadores y jugador.
+     */
     public void Imagenes()
     { 
         //////////////Techo/////////////////

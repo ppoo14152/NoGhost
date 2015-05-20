@@ -1,9 +1,9 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Records here.
+ * Aqui se muestra las mejores puntuaciones del juego
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class Records extends World
@@ -25,6 +25,10 @@ public class Records extends World
         //volver.getImage().scale(150,150);
        
     }
+   /**
+     * Decoracion de escenario de Records.
+     * 
+     */
     public void Imagenes()
     {
         monios m1 = new monios(0);//se crea la imagen de los moños en records

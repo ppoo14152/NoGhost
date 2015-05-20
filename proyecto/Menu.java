@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Menu here.
+ * Es la presentacion del juego, donde puedes visualizar tus records, revisar la ayuda e iniciar el juego
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class Menu extends World
@@ -13,7 +13,10 @@ public class Menu extends World
     private Actor credito;//creando actor de boton credito
     private Actor record;//creando actor de boton record
     
-    
+    /**
+     * Constructor for objects of class Mundo.
+     * 
+     */
     public Menu()
     {    
         super(920, 530, 1); //Tamaño del fondo
@@ -58,7 +61,9 @@ public class Menu extends World
             
         }
     }
-    
+    /**
+     * Agrega cambio en el menu y decoracion para darle mejor apariencia al menu.
+     */
     public void prepare()
     {
         

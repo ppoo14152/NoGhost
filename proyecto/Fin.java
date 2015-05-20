@@ -1,15 +1,18 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Fin here.
+ * Aqui se encuantran las pantallas de perdiste o ganaste ademas de elementos del escenario de records.
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class Fin extends World
 {
     private Actor Regresar;
-   
+   /**
+     * Constructor para objetos de clase Fin.
+     * 
+     */
     public Fin(int sel)
     {    
         super(920, 530, 1); //Resolucion

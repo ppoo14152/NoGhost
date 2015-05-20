@@ -1,15 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ayuda here.
+ * Escenario de la ayuda, ademas de mostrar a nuestro jugador
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class Ayuda extends World
 {
     private Actor Regresar;
     
+    /**
+     * Constructor para objetos de clase Ayuda.
+     * 
+     */
     public Ayuda()
     {    
         super(920, 530, 1); //Resolucion de escenario

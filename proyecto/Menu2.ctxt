@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Menu2()
+comment0.text=\r\n\ Constructor\ de\ Menu2\ \r\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=void\ Relampago()
+comment2.text=\r\n\ Se\ encarga\ de\ simular\ la\ imagen\ de\ relampago\ en\ la\ pantalla\ al\ cargarce\ el\ menu\r\n
 numComments=3

@@ -12,6 +12,7 @@ public class Menu extends World
     private Actor jugar;//creando actor de boton jugar
     private Actor credito;//creando actor de boton credito
     private Actor record;//creando actor de boton record
+    private GreenfootSound musica=new GreenfootSound("Truenos.mp3");
     
     /**
      * Constructor for objects of class Mundo.
@@ -34,7 +35,7 @@ public class Menu extends World
         addObject(record, 580, 450);
         
         setPaintOrder(botones.class);
-        
+        musica.setVolume(50);
         prepare(); //Llama a la funcion prepare
     }
     

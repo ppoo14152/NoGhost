@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.params=sel
 comment0.target=BaseElevador(int)
+comment0.text=\r\n\ Constructor\ de\ la\ Base\ elige\ entre\ \r\n\ @param\ sel\ selecciona\ el\ elevador\ a\ usar\r\n
 comment1.params=
 comment1.target=void\ act()
 numComments=2

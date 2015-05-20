@@ -1,8 +1,11 @@
 #BlueJ class context
 comment0.params=x\ y
 comment0.target=CasperAyuda(int,\ int)
+comment0.text=\r\n\ Cosntructor\ de\ la\ ayuda\ carga\ una\ imagen\ de\ gasper\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ Hace\ el\ movimiento\ de\ casper\ arriba\ y\ abajo\ en\ el\ menu\r\n
 comment2.params=
 comment2.target=void\ Movimiento()
+comment2.text=\r\n\ Hace\ el\ movimiento\ de\ arriba\ y\ abajo\ para\ casper\r\n
 numComments=3

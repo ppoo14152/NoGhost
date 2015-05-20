@@ -2,16 +2,20 @@ import greenfoot.*;
 import java.util.*;
 
 /**
- * Write a description of class BaseElevador here.
+ * Crea la base del elevador
  * 
  * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
- * @version (a version number or a date)
+ * @version (1.0)
  */
 public class BaseElevador extends Elevadores
 {
    
     private ArrayList imagenes;
     
+    /**
+     * Constructor de la Base elige entre 
+     * @param sel selecciona el elevador a usar
+     */
     public BaseElevador(int sel)
     {
         imagenes  = new ArrayList();

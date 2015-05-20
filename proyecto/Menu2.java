@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Menu2 here.
+ * Creando un submenu
  * 
  * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
- * @version (a version number or a date)
+ * @version (1.0)
  */
 public class Menu2 extends Actor
 {
@@ -23,11 +23,13 @@ public class Menu2 extends Actor
     
     private GreenfootSound musica=new GreenfootSound("Truenos.mp3");
     
+    /**
+     * Constructor de Menu2 
+     */
     public Menu2()
     {
         imagen1 = new GreenfootImage("1.jpg");
         imagen2 = new GreenfootImage("3.jpg");
-        
         musica.setVolume(50);
         setImage(imagen1);
     }
@@ -37,6 +39,9 @@ public class Menu2 extends Actor
         Relampago();
     }
     
+    /**
+     * Se encarga de simular la imagen de relampago en la pantalla al cargarce el menu
+     */
     public void Relampago()
     {       
         if(indice == 0)
@@ -55,6 +60,7 @@ public class Menu2 extends Actor
             aux = 20;
             musica.play();
         }
+        
         if(band)
         {
             setImage(imagen1);

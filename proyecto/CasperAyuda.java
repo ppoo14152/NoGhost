@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class CasperAyuda here.
+ * Muestra la ayuda del juego
  * 
  * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
- * @version (a version number or a date)
+ * @version (15 Mayo 2015) 
  */
 public class CasperAyuda extends EstaticosAyuda
 {
@@ -17,6 +17,9 @@ public class CasperAyuda extends EstaticosAyuda
     private boolean band = false;
     private int i = 20;
     
+    /**
+     * Cosntructor de la ayuda carga una imagen de gasper
+     */
     public CasperAyuda(int x, int y)
     {
         imagen = new GreenfootImage("CasperJuego.png");
@@ -27,11 +30,17 @@ public class CasperAyuda extends EstaticosAyuda
         sube = y;
     }
     
+    /**
+     * Hace el movimiento de casper arriba y abajo en el menu
+     */
     public void act() 
     {
         Movimiento();
     }
     
+    /**
+     * Hace el movimiento de arriba y abajo para casper
+     */
     public void Movimiento()
     {
         if(z == 0)

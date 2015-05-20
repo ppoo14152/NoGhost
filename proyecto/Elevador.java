@@ -2,10 +2,10 @@ import greenfoot.*;
 import java.util.*;
 
 /**
- * Write a description of class Elevador here.
+ * Creando el elevador 
  * 
  * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
- * @version (a version number or a date)
+ * @version (2.0) Modificado 
  */
 public class Elevador extends Elevadores
 {
@@ -29,6 +29,10 @@ public class Elevador extends Elevadores
     
     private int detenido = 0;
     
+    /**
+     * Constructor del elevador 
+     * @param selElevador verifica el tamanio del edificio
+     */
     public Elevador(int selElevador)
     {
         if(selElevador == 0)
@@ -44,6 +48,9 @@ public class Elevador extends Elevadores
         imagenes.add(new GreenfootImage("Elevador2.png"));
     }
     
+    /**
+     * Mantiene al elevador en movimiento ya sea arriba, abajo y tambien lo detiene
+     */
     public void act() 
     {
         int x = 0;
@@ -54,6 +61,9 @@ public class Elevador extends Elevadores
         x = Parado();
     }
     
+    /**
+     * Hace el movimiento del elevador arriba y abajo y ademas lo detiene para que puedas entrar
+     */
     private void Movimiento()
     {
         x = getX();
@@ -107,6 +117,9 @@ public class Elevador extends Elevadores
         }
     }
     
+    /**
+     * Cambia la manera en que se mueve , es decir de arriba hacia abajo , o de abajo hacia arriva segun se requiera.
+     */
     private boolean Direccion()
     {
         boolean aux = false; //Auxiliar para mandar la respuesta al metodo Movimiento
@@ -153,6 +166,11 @@ public class Elevador extends Elevadores
         return aux;
     }
     
+    /**
+     * Detiene al elevador
+     * @return 1 para que cambie la imagen de que esta parado
+     * @return 0 para que cambie a cerrado
+     */
     public int Parado()
     {   
         if(detenido == 1)

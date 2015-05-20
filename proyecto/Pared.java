@@ -1,14 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Pared here.
+ * se llama a la imagen de la pared del escenario
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class Pared extends Estaticos
 {
-    public GreenfootImage imagen;
+    private GreenfootImage imagen;
     
     public Pared()
     {

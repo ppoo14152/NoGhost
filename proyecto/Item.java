@@ -3,7 +3,7 @@ import greenfoot.*;
 /**
  * No contiene ninguna clase , solo muestra el item en el escenario al ser creado
  * 
- * @author Cristobal Zavala Cano 
+ * @author Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano 
  * @version 0.1
  */
 public class Item extends Estaticos

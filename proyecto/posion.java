@@ -3,7 +3,7 @@ import greenfoot.*;
 /**
  * No contiene ninguna clase , solo muestra las posiones en el escenario
  * 
- * @author Cristobal Zavala Cano 
+ * @author Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano 
  * @version 0.0
  */
 public class posion extends Estaticos

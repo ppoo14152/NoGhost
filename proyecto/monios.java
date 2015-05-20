@@ -2,9 +2,9 @@ import greenfoot.*;
 import java.util.*;
 
 /**
- * Write a description of class moños here.
+ * Imagenes de el escenario de records y pantallas de perdiste y ganaste
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez) 
  * @version (a version number or a date)
  */
 public class monios extends Estaticos

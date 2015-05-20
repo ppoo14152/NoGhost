@@ -1,10 +1,12 @@
 #BlueJ class context
 comment0.params=sel
 comment0.target=Muebles(int)
+comment0.text=\r\n\ Clase\ donde\ se\ insertan\ las\ imagenes\ de\ muebles\ \r\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=void\ Prende()
+comment2.text=\r\n\ Cambia\ las\ imagenes\ de\ interaccion\ por\ otras\r\n
 comment3.params=
 comment3.target=void\ RegresaImagenInicial()
 numComments=4

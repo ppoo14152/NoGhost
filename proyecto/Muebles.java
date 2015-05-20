@@ -3,9 +3,9 @@ import java.util.*;
 
 
 /**
- * Write a description of class Muebles here.
+ * Muebles del escenario en casa 
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano ) 
  * @version (a version number or a date)
  */
 public class Muebles extends Estaticos
@@ -13,11 +13,13 @@ public class Muebles extends Estaticos
      private ArrayList imagenes;
      
      private int numero;
-     public boolean hola;
+     private boolean hola;
      private int timer = 500;
      private boolean band = false;
      private boolean entra;
-        
+     /**
+     * Clase donde se insertan las imagenes de muebles 
+     */
     public Muebles(int sel)
     {
         imagenes  = new ArrayList();
@@ -312,7 +314,9 @@ public class Muebles extends Estaticos
     {
         Prende();
     }
-    
+    /**
+     * Cambia las imagenes de interaccion por otras
+     */
     public void Prende()
     {
         Casper casper = (Casper)(getWorld().getObjects(Casper.class).get(0));

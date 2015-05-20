@@ -28,8 +28,7 @@ public class Texto extends Actor
     /**
     * Clase para desplegar el texto recibido
     * @param cadena es el parametro de la cadena a mostrar
-    * @param tam es el tamaño del texto a mostrar
-    */
+        */
     public void Despliega(String cadena,int tam)
     {
         super.setImage(new GreenfootImage(cadena1+cadena,tam,java.awt.Color.WHITE,null));

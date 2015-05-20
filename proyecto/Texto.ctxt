@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.params=cad
 comment0.target=Texto(java.lang.String)
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ Texto\ solo\ recibe\ la\ cadena\ para\ inicializar\ su\ variable\r\n
 comment1.params=cadena\ tam
 comment1.target=void\ Despliega(java.lang.String,\ int)
+comment1.text=\r\n\ Clase\ para\ desplegar\ el\ texto\ recibido,\ recibe\ como\ parametros\ \r\n\ la\ cadena\ a\ mostrar\ y\ el\ tama\u00F1o\ de\ la\ cadena\r\n
 comment2.params=
 comment2.target=void\ act()
 numComments=3

@@ -1,31 +1,38 @@
 import greenfoot.*;
 import java.awt.Color;
 /**
- * Write a description of class BarraPresencial here.
+ * Esta clase crea una Barra para que esta se modifique conforme la requiera el usuario
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Cristobal Zavala Cano
+ * @version 0.1
  */
 public class BarraPresencial extends Actor
 {
+    
+    private int vida = 100;
+    private int VidaBarraAncho = 100;
+    private int VidaBarraAlto = 15;
+    private int pixelesDeBarra = (int)VidaBarraAncho/vida;
     /**
-     * Act - do whatever the BarraPresencial wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Constructor de la Barra inicializa la barra , es decir esta al 100%
      */
-    int vida = 100;
-    int VidaBarraAncho = 100;
-    int VidaBarraAlto = 15;
-    int pixelesDeBarra = (int)VidaBarraAncho/vida;
     public BarraPresencial()
     {
         Actualiza();
     }
     
+    
+    /**
+     * Esta clase siempre esta ejecutandose cada que el Actor BarraPresencial fue llamado
+     */
     public void act() 
     {
         Actualiza();
     }
     
+    /**
+     * Esta clase solo Actualiza la Barra con los nuevos valores y la modifica para vaciarla
+     */
     public void Actualiza()
     {
         setImage(new GreenfootImage(VidaBarraAncho + 2,VidaBarraAlto + 2));
@@ -37,6 +44,9 @@ public class BarraPresencial extends Actor
         
     }
     
+    /**
+     * Esta clase al ejecutarse modifica el total de tu vida restando una unidad a ella
+     */
     public void detectaPresencia()
     {
         vida --;

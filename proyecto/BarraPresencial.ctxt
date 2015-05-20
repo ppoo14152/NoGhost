@@ -1,10 +1,14 @@
 #BlueJ class context
 comment0.params=
 comment0.target=BarraPresencial()
+comment0.text=\r\n\ Constructor\ de\ la\ Barra\ inicializa\ la\ barra\ ,\ es\ decir\ esta\ al\ 100%\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ Esta\ clase\ siempre\ esta\ ejecutandose\ cada\ que\ el\ Actor\ BarraPresencial\ fue\ llamado\r\n
 comment2.params=
 comment2.target=void\ Actualiza()
+comment2.text=\r\n\ Esta\ clase\ solo\ Actualiza\ la\ Barra\ con\ los\ nuevos\ valores\ y\ la\ modifica\ para\ vaciarla\r\n
 comment3.params=
 comment3.target=void\ detectaPresencia()
+comment3.text=\r\n\ Esta\ clase\ al\ ejecutarse\ modifica\ el\ total\ de\ tu\ vida\ restando\ una\ unidad\ a\ ella\r\n
 numComments=4

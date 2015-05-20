@@ -1,16 +1,15 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Item here.
+ * No contiene ninguna clase , solo muestra el item en el escenario al ser creado
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Cristobal Zavala Cano 
+ * @version 0.1
  */
 public class Item extends Estaticos
 {
     /**
-     * Act - do whatever the Item wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * No actua, es un objeto estatico
      */
     public void act() 
     {

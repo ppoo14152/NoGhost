@@ -1,31 +1,47 @@
 import greenfoot.*;
 
 /**
- * Write a description of class ninia here.
+ * La clase muestra a un Actor que es un ninio que se esta paseando por el escenario
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Cristobal Zavala Cano 
+ * @version 15 Mayo 2015
  */
 public class ninio extends persona
 {
-    private GreenfootImage run1= new GreenfootImage("n.png");
-    private GreenfootImage run2= new GreenfootImage("n1.png");
-    private GreenfootImage run3= new GreenfootImage("n2.png");
-    private GreenfootImage run4= new GreenfootImage("n0.png");
+    private GreenfootImage run1;
+    private GreenfootImage run2;
+    private GreenfootImage run3;
+    private GreenfootImage run4;
     
-    private int speed = 1;
-    private int frame = 1;
-    private int avance = 0;
+    private int speed;
+    private int frame;
+    private int avance;
     private int id;
-    private boolean parate = false;
+    private boolean parate;
     
-    
+    /**
+     * Constructor de la clase ninio cada que es llamada solo inicializa las variables.
+     * @param n es un numero con el que se reconocera al actor
+     */
     public ninio(int n)
     {
+        run1= new GreenfootImage("n.png");
+        run2= new GreenfootImage("n1.png");
+        run3= new GreenfootImage("n2.png");
+        run4= new GreenfootImage("n0.png");
         setImage("n1.png");
+        speed = 1;
+        frame = 1;
+        avance = 0;
+        parate = false;
         id = n;
     }
     
+    
+    /**
+     * Mantiene al jugador Activo es decir moviendose sobre el escenario
+     * mientras no se tenga la variable parate en true
+     */
     public void act() 
     {
         World m=getWorld();
@@ -49,6 +65,10 @@ public class ninio extends persona
         parado();
     }
    
+    /**
+     * Esta Clase hace que el jugador cambie su estado de interaccion, falso para caminar y true para 
+     * que se pare
+     */
     public void parado()
     {
         Casper jug = (Casper)(getWorld().getObjects(Casper.class).get(0));        
@@ -63,6 +83,9 @@ public class ninio extends persona
         
     }
     
+    /**
+     * Solo muestra la animacion derecha al estar actuando en el escenario
+     */
     public void animacionDerecha()
     {
         if(frame == 1)
@@ -94,14 +117,4 @@ public class ninio extends persona
         }
         avance++;
     }
-    
-    private int Alto()
-    {
-        return getImage().getHeight();
-    }
-    
-    public int Ancho()
-    {
-        return getImage().getWidth();
-    }  
 }

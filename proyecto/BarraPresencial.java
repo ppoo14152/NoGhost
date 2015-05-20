@@ -4,20 +4,24 @@ import java.awt.Color;
  * Esta clase crea una Barra para que esta se modifique conforme la requiera el usuario
  * 
  * @author Cristobal Zavala Cano
- * @version 0.1
+ * @version (15 Mayo 2015)
  */
 public class BarraPresencial extends Actor
 {
     
-    private int vida = 100;
-    private int VidaBarraAncho = 100;
-    private int VidaBarraAlto = 15;
-    private int pixelesDeBarra = (int)VidaBarraAncho/vida;
+    private int vida;
+    private int VidaBarraAncho;
+    private int VidaBarraAlto;
+    private int pixelesDeBarra;
     /**
      * Constructor de la Barra inicializa la barra , es decir esta al 100%
      */
     public BarraPresencial()
     {
+        vida = 100;
+        VidaBarraAncho = 100;
+        VidaBarraAlto = 15;
+        pixelesDeBarra = (int)VidaBarraAncho/vida;
         Actualiza();
     }
     

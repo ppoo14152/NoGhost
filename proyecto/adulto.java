@@ -1,39 +1,58 @@
 import greenfoot.*;
 
 /**
- * Write a description of class ninia here.
+ * La clase muestra a un Actor que es un ninio que se esta paseando por el escenario.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Cristobal Zavala Cano.
+ * @version 15 Mayo 2015.
  */
 public class adulto extends persona
 {
-    private GreenfootImage run1= new GreenfootImage("r.png");
-    private GreenfootImage run2= new GreenfootImage("r1.png");
-    private GreenfootImage run3= new GreenfootImage("r2.png");
-    private GreenfootImage run4= new GreenfootImage("r.png");
+    private GreenfootImage run1;
+    private GreenfootImage run2;
+    private GreenfootImage run3;
+    private GreenfootImage run4;
     
-    private int speed = 2;
-    private int frame = 1;
-    private int avance = 0;
+    private int speed;
+    private int frame;
+    private int avance;
     private int id;
     private boolean parate = false;
     
      // ********** variables para el salto **********/
-    private int velCaida = 0;
-    private int aceleracion = 2;
+    private int velCaida;
+    private int aceleracion;
     private boolean saltando;
-    private int tamSalto = 15;
+    private int tamSalto;
     private int tiempoSalto;
     //************************************************
     
-    
+    /**
+     * Constructor de la clase adulto cada que es llamada para inicializar las variables.
+     * @param n es un id con el que se reconocera al actor.
+     */
     public adulto(int n)
     {
+        run1= new GreenfootImage("r.png");
+        run2= new GreenfootImage("r1.png");
+        run3= new GreenfootImage("r2.png");
+        run4= new GreenfootImage("r.png");
+        //***** inicializacion de variables para el salto *********//
+        velCaida = 0;
+        aceleracion = 2;
+        tamSalto = 15;
+        tiempoSalto = 0;
+        //*********************************************************//
+        speed = 2;
+        frame = 1;
+        avance = 0;
         setImage("r1.png");
         id = n;
     }
     
+    /**
+     * Clase donde el adulto camina, salta y se mueve sobre el escenario.
+     */
     public void act() 
     {
         World m=getWorld();
@@ -60,6 +79,10 @@ public class adulto extends persona
         parado();
     }
    
+    /**
+     * Esta Clase hace que el jugador cambie su estado de interaccion, falso para caminar y true para 
+     * que se pare.
+     */
     public void parado()
     {
         Casper jug = (Casper)(getWorld().getObjects(Casper.class).get(0));        
@@ -74,6 +97,9 @@ public class adulto extends persona
         
     }
     
+    /**
+     * Solo muestra la animacion derecha al estar actuando en el escenario.
+     */
     public void animacionDerecha()
     {
         if(frame == 1)
@@ -106,6 +132,9 @@ public class adulto extends persona
         avance++;
     }
     
+    /**
+     * Clase para activar el salto automatico cada cierto tiempo y si esta en el suelo.
+     */
     public void saltoAutomatico()
     {
         if( tiempoSalto == 120 && saltando == false)
@@ -116,6 +145,9 @@ public class adulto extends persona
         tiempoSalto++;
     }
     
+    /**
+     * Clase para la caida cambia cada que se ejecuta cambia la variable saltando en true.
+     */
     private void caida()
     {
             setLocation(getX(),getY()+velCaida);
@@ -126,6 +158,12 @@ public class adulto extends persona
             saltando = true;
     }
     
+    
+    /**
+     * Retorna si el actor esta tocando el suelo o saltando
+     * @return true cuando el actor esta en el suelo
+     * @return false cuando el actor esta saltando
+     */
     public boolean enPiso()
     {
         int miraPiso = (int) (altoImagen()/2)+1;
@@ -143,6 +181,9 @@ public class adulto extends persona
         
     }
     
+    /**
+     * Mueve a tierra al personaje, lo deja fijo en el piso.
+     */
     public void moveraTierra(Actor piso)
     {
         int pisoAltura = piso.getImage().getHeight();
@@ -151,6 +192,11 @@ public class adulto extends persona
         saltando = false;
     }
     
+    
+    /**
+     * checa si el actor ha llegado al piso, si no esta en el piso efectua la caida
+     * si esta en el piso  la velocidad de caida vuelve a 0.
+     */
     public void chekaPiso()
     {
         if(enPiso())
@@ -162,6 +208,9 @@ public class adulto extends persona
         }
     }
     
+    /**
+     * Efectua la simulacion de saltado , cambia la variable saltando a true.
+     */
     public void saltar()
     {
         velCaida = velCaida - tamSalto;
@@ -169,11 +218,19 @@ public class adulto extends persona
         caida();
     }
     
+    /**
+     * retorna el alto de la imagen
+     * @return alto
+     */
    public int altoImagen()
     {
         return getImage().getHeight();
     }
     
+    /**
+     * retorna el ancho de la imagen
+     * @return ancho
+     */
     public int anchoImagen()
     {
         return getImage().getWidth();

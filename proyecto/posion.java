@@ -1,16 +1,15 @@
 import greenfoot.*;
 
 /**
- * Write a description of class posion here.
+ * No contiene ninguna clase , solo muestra las posiones en el escenario
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Cristobal Zavala Cano 
+ * @version 0.0
  */
 public class posion extends Estaticos
 {
     /**
-     * Act - do whatever the posion wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * No actua, solo es un objeto estatico
      */
     public void act() 
     {

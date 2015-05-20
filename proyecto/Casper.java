@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Casper here.
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class Casper extends Actor
@@ -10,7 +10,7 @@ public class Casper extends Actor
     private Save jugador=new Save();
     private GreenfootImage gasperIzq= new GreenfootImage("CasperJuego.png");
     private GreenfootImage gasperDer= new GreenfootImage("CasperJuegoder.png");
-    public int direccion;
+    private int direccion;
     private int speed = 5 ;
     private boolean bandEntrada = false;
     private boolean bandPara;

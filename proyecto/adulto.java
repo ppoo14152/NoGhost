@@ -3,7 +3,7 @@ import greenfoot.*;
 /**
  * La clase muestra a un Actor que es un ninio que se esta paseando por el escenario.
  * 
- * @author Cristobal Zavala Cano.
+ * @author Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano.
  * @version 15 Mayo 2015.
  */
 public class adulto extends persona

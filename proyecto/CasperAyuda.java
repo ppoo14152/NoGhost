@@ -3,19 +3,19 @@ import greenfoot.*;
 /**
  * Write a description of class CasperAyuda here.
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class CasperAyuda extends EstaticosAyuda
 {
-    public GreenfootImage imagen;
-    public int z = 10;
-    public int z2 = 10;
-    public int a;
-    public int sube;
-    public int aux = 0;
-    public boolean band = false;
-    public int i = 20;
+    private GreenfootImage imagen;
+    private int z = 10;
+    private int z2 = 10;
+    private int a;
+    private int sube;
+    private int aux = 0;
+    private boolean band = false;
+    private int i = 20;
     
     public CasperAyuda(int x, int y)
     {

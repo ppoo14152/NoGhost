@@ -4,7 +4,7 @@ import java.util.*;
 /**
  * Write a description of class Elevador here.
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class Elevador extends Elevadores
@@ -27,7 +27,7 @@ public class Elevador extends Elevadores
     private int x = 400;                                    // Direccion en X del ascensor
     private int y = 84;                                     // Direccion en Y del ascensor
     
-    public int detenido = 0;
+    private int detenido = 0;
     
     public Elevador(int selElevador)
     {

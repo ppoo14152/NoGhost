@@ -4,7 +4,7 @@ import java.util.*;
 /**
  * Write a description of class BaseElevador here.
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class BaseElevador extends Elevadores

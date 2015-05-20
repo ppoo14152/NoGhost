@@ -3,16 +3,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class TextoVidas here.
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class TextoVidas extends Actor
 {
     private GreenfootImage texto;
     
-    public int posX = 0;
-    public int posY = 0;
-    public String cadena1;
+    private int posX = 0;
+    private int posY = 0;
+    private String cadena1;
     
     public TextoVidas(String cad)
     {

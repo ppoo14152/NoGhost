@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Menu2 here.
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class Menu2 extends Actor
@@ -11,15 +11,15 @@ public class Menu2 extends Actor
     GreenfootImage imagen1;
     GreenfootImage imagen2;
     
-    public int indice = 100;
-    public int aux = 20;
-    public int aux2 = 30;
-    public int aux3 = 30;
-    public int aux4 = 190;
+    private int indice = 100;
+    private int aux = 20;
+    private int aux2 = 30;
+    private int aux3 = 30;
+    private int aux4 = 190;
     
-    public boolean band = false;
-    public boolean band2 = false;
-    public boolean band3 = false;
+    private boolean band = false;
+    private boolean band2 = false;
+    private boolean band3 = false;
     
     private GreenfootSound musica=new GreenfootSound("Truenos.mp3");
     

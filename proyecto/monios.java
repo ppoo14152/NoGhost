@@ -4,7 +4,7 @@ import java.util.*;
 /**
  * Imagenes de el escenario de records y pantallas de perdiste y ganaste
  * 
- * @author (Maria Gpe. Velazquez Martinez) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class monios extends Estaticos

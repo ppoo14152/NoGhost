@@ -3,7 +3,7 @@ import greenfoot.*;
 /**
  * Write a description of class ninia here.
  * 
- * @author (your name) 
+ * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
 public class ninia extends persona

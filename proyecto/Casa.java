@@ -12,10 +12,14 @@ public class Casa extends World
      * Constructor for objects of class Casa.
      * 
      */
+    private Texto txNivel;
     BarraPresencial vidaBarra = new BarraPresencial();
     public Casa()
     {    
         super(920, 530, 1); //Resolucion//
+        txNivel= new Texto("Nivel:");
+        txNivel.Despliega(""+1,20);
+        addObject(txNivel,500,25);
         getBackground().setColor(Color.BLACK);//fondo
         getBackground().fill();
         prepare();

@@ -36,7 +36,6 @@ public class Casper extends Actor
      */
     public Casper()
     {
-        //sVida = Integer.toString(vida);
         txVida = new Texto("Vida");
         txPosima = new Texto("Posiones:");
         txItem = new Texto("Items:");
@@ -354,11 +353,11 @@ public class Casper extends Actor
         }
         if (isTouching(Objetivo2.class) && op1 == 1 && itemRecolectados >= 15)//pasar de segundo nivel a tercer nivel
         { 
-            Greenfoot.setWorld(new Casa3()); 
+            Greenfoot.setWorld(new Casa3());
         }
         if (isTouching(Objetivo3.class) && op2 == 1 && itemRecolectados >= 25)//pasar de tercer nivel a ganar
         { 
-            Greenfoot.setWorld(new Fin(0)); 
+            Greenfoot.setWorld(new Fin(0));
         }
 
     }
@@ -368,7 +367,7 @@ public class Casper extends Actor
      */
     public void MuestraVida()
     {
-        txVida.Despliega("",30);
+        txVida.Despliega("",20);
         getWorld().addObject(txVida,710,25);
     }
     
@@ -389,6 +388,8 @@ public class Casper extends Actor
         txItem.Despliega(""+itemRecolectados,16);
         getWorld().addObject(txItem,203,25);
     }
+    
+    
     
     /**
      * Clase que solo mueve al actor en direccion izquierda y derecha

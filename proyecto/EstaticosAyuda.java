@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class EstaticosAyuda here.
+ * Muestra botones de ayuda.
  * 
  * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
- * @version (a version number or a date)
+ * @version (Mayo 2015)
  */
 public class EstaticosAyuda extends Actor
 {

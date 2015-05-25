@@ -6,8 +6,10 @@ import greenfoot.*;
  * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
  * @version (a version number or a date)
  */
+
 public class Records extends World
 {
+    private GreenfootSound trueno = new GreenfootSound("trueno.mp3");
     private Actor Regresa;
     private ScoreBoard scoreBoard;
     /**
@@ -17,7 +19,8 @@ public class Records extends World
     public Records()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(920, 530, 1); 
+        super(920, 530, 1);
+        trueno.play();
         Regresa =new botones (3);//se crea boton de regresar
         addObject(new ScoreBoard(100, 400), getWidth() / 2, getHeight() / 2);
         addObject(Regresa,820,450);
@@ -25,6 +28,7 @@ public class Records extends World
         //volver.getImage().scale(150,150);
        
     }
+    
    /**
      * Decoracion de escenario de Records.
      * 
@@ -46,9 +50,29 @@ public class Records extends World
         if(Greenfoot.getMouseInfo()!=null){
            
            if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor()==Regresa){
-                Greenfoot.setWorld(new Menu());// al presional boton regresa a menu
+               this.stopped();
+               Greenfoot.setWorld(new Menu());// al presional boton regresa a menu
             }
             
         }   
+    }
+    /**
+     * Metodo para iniciar el juego al darle play 
+     */
+    public void started()
+    {
+        super.started();
+        trueno.play();
+
+    }
+
+    /**
+     * metodo para detener el juego.
+     */
+    public void stopped() 
+    {
+        super.stopped();
+        trueno.pause();
+
     }
 }

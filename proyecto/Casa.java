@@ -3,7 +3,7 @@ import java.awt.Color;
 /**
  * Este es el escenario del primer nivel, ademas de mostrar a las personas que debes evitar.
  * @author (Maria Gpe. Velazquez Martinez y Cristobal Zavala Cano) 
- * @version (a version number or a date)
+ * @version (mayo 2015)
  */
 public class Casa extends World
 {

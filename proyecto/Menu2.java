@@ -21,8 +21,6 @@ public class Menu2 extends Actor
     private boolean band2 = false;
     private boolean band3 = false;
     
-    private GreenfootSound musica=new GreenfootSound("Truenos.mp3");
-    
     /**
      * Constructor de Menu2 
      */
@@ -30,7 +28,6 @@ public class Menu2 extends Actor
     {
         imagen1 = new GreenfootImage("1.jpg");
         imagen2 = new GreenfootImage("3.jpg");
-        musica.setVolume(50);
         setImage(imagen1);
     }
     
@@ -58,7 +55,7 @@ public class Menu2 extends Actor
             setImage(imagen1);
             indice--;
             aux = 20;
-            musica.play();
+            
         }
         
         if(band)
@@ -90,9 +87,10 @@ public class Menu2 extends Actor
             if(aux4 == 0)
             {
                 indice = 100;
-                musica.stop();
                 band3 = false;
             }
         }
+        
     }
+    
 }

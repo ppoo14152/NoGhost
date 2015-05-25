@@ -11,8 +11,7 @@ public class Menu extends World
     private Actor ayuda;//creando actor de boton ayuda
     private Actor jugar;//creando actor de boton jugar
     private Actor credito;//creando actor de boton credito
-    private Actor record;//creando actor de boton record
-    private GreenfootSound musica=new GreenfootSound("Truenos.mp3");
+    private Actor record;//creando actor de boton records
     
     /**
      * Constructor for objects of class Mundo.
@@ -35,7 +34,6 @@ public class Menu extends World
         addObject(record, 580, 450);
         
         setPaintOrder(botones.class);
-        musica.setVolume(50);
         prepare(); //Llama a la funcion prepare
     }
     
@@ -82,9 +80,9 @@ public class Menu extends World
         
         TiosMenu tM4 = new TiosMenu(4);//creo a tio numero cuatro
         addObject(tM4, 180, 80);
-         
         
         CasperMenu cM = new CasperMenu(620, 200, 1);//se agrega y se le da el movimiento a el protagonista
         addObject(cM, 620, 200);
     }
+    
 }
